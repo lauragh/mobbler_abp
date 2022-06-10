@@ -1,0 +1,241 @@
+[{
+  "_id": {
+    "$oid": "621e3150eb41772b17bbadb5"
+  },
+  "nombre": "Tikamoon",
+  "num_modelos": 0,
+  "fabricante": "Construcción Luis",
+  "precio": "23.99",
+  "fecha": {
+    "$date": "2022-01-01T14:44:32.499Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3150eb41772b17bbadb7"
+  },
+  "nombre": "Werdön",
+  "num_modelos": 0,
+  "fabricante": "Construcción Pedro",
+  "precio": "58.36",
+  "fecha": {
+    "$date": "2022-02-01T14:44:32.507Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3150eb41772b17bbadb4"
+  },
+  "nombre": "Plebo",
+  "num_modelos": 0,
+  "fabricante": "Construcción Luis",
+  "precio": "58.36",
+  "fecha": {
+    "$date": "2022-03-01T14:44:32.474Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3150eb41772b17bbadb9"
+  },
+  "nombre": "Werdön",
+  "num_modelos": 0,
+  "fabricante": "Construcción Pedro",
+  "precio": "35.5",
+  "fecha": {
+    "$date": "2022-03-01T14:44:32.514Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3150eb41772b17bbadba"
+  },
+  "nombre": "Plebo",
+  "num_modelos": 0,
+  "fabricante": "Construcción Pedro",
+  "precio": "23.99",
+  "fecha": {
+    "$date": "2022-03-01T14:44:32.519Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3150eb41772b17bbadbb"
+  },
+  "nombre": "Werdön",
+  "num_modelos": 0,
+  "fabricante": "Construcción Pedro",
+  "precio": "23.99",
+  "fecha": {
+    "$date": "2022-03-01T14:44:32.523Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3150eb41772b17bbadbc"
+  },
+  "nombre": "Werdön",
+  "num_modelos": 0,
+  "fabricante": "Construcción Pedro",
+  "precio": "23.99",
+  "fecha": {
+    "$date": "2022-03-01T14:44:32.527Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3150eb41772b17bbadbd"
+  },
+  "nombre": "Werdön",
+  "num_modelos": 0,
+  "fabricante": "Construcción Luis",
+  "precio": "35.5",
+  "fecha": {
+    "$date": "2022-03-01T14:44:32.531Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3150eb41772b17bbadbe"
+  },
+  "nombre": "Tikamoon",
+  "num_modelos": 0,
+  "fabricante": "Construcción Pedro",
+  "precio": "23.99",
+  "fecha": {
+    "$date": "2022-03-01T14:44:32.535Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3150eb41772b17bbadbf"
+  },
+  "nombre": "Werdön",
+  "num_modelos": 0,
+  "fabricante": "Construcción Luis",
+  "precio": "35.5",
+  "fecha": {
+    "$date": "2022-03-01T14:44:32.539Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3150eb41772b17bbadc0"
+  },
+  "nombre": "Werdön",
+  "num_modelos": 0,
+  "fabricante": "Construcción Pedro",
+  "precio": "35.5",
+  "fecha": {
+    "$date": "2022-03-01T14:44:32.544Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3150eb41772b17bbadc1"
+  },
+  "nombre": "Tikamoon",
+  "num_modelos": 0,
+  "fabricante": "Construcción Luis",
+  "precio": "23.99",
+  "fecha": {
+    "$date": "2022-03-01T14:44:32.548Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3150eb41772b17bbadc2"
+  },
+  "nombre": "Werdön",
+  "num_modelos": 0,
+  "fabricante": "Construcción Pedro",
+  "precio": "23.99",
+  "fecha": {
+    "$date": "2022-03-01T14:44:32.552Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3150eb41772b17bbadc3"
+  },
+  "nombre": "Plebo",
+  "num_modelos": 0,
+  "fabricante": "Construcción Pedro",
+  "precio": "23.99",
+  "fecha": {
+    "$date": "2022-03-01T14:44:32.557Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3150eb41772b17bbadc4"
+  },
+  "nombre": "Plebo",
+  "num_modelos": 0,
+  "fabricante": "Construcción Luis",
+  "precio": "35.5",
+  "fecha": {
+    "$date": "2022-03-01T14:44:32.561Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3150eb41772b17bbadc5"
+  },
+  "nombre": "Plebo",
+  "num_modelos": 0,
+  "fabricante": "Construcción Luis",
+  "precio": "23.99",
+  "fecha": {
+    "$date": "2022-03-01T14:44:32.564Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3150eb41772b17bbadc6"
+  },
+  "nombre": "Tikamoon",
+  "num_modelos": 0,
+  "fabricante": "Construcción Luis",
+  "precio": "23.99",
+  "fecha": {
+    "$date": "2022-03-01T14:44:32.568Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3150eb41772b17bbadc7"
+  },
+  "nombre": "Werdön",
+  "num_modelos": 0,
+  "fabricante": "Construcción Pedro",
+  "precio": "23.99",
+  "fecha": {
+    "$date": "2022-03-01T14:44:32.572Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3150eb41772b17bbadb6"
+  },
+  "nombre": "Tikamoon",
+  "num_modelos": 0,
+  "fabricante": "Construcción Luis",
+  "precio": "58.36",
+  "fecha": {
+    "$date": "2022-03-01T14:44:32.503Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3150eb41772b17bbadb8"
+  },
+  "nombre": "Plebo",
+  "num_modelos": 0,
+  "fabricante": "Construcción Pedro",
+  "precio": "35.5",
+  "fecha": {
+    "$date": "2022-03-01T14:44:32.510Z"
+  },
+  "__v": 0
+}]

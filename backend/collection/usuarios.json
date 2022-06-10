@@ -1,0 +1,41 @@
+[{
+    "_id": {
+      "$oid": "61a7b3d3b75394adfaaefbf0"
+    },
+    "nombre": "Elizabeth",
+    "apellidos": "Balbin",
+    "email": "abc@gmail.com",
+    "password": "$2a$10$O1NEyTS6ki5fdsWJ.bnYuu/yq4jZwQAW5DrTYAKphIaJIRXYLdM3G",
+    "rol": "ROL_ALUMNO",
+    "__v": 0
+  },{
+    "_id": {
+      "$oid": "61a7c0da90ea9e41d4123816"
+    },
+    "nombre": "Beatriz",
+    "apellidos": "Gamez",
+    "email": "bea.gamez@gmail.com",
+    "password": "$2a$10$F/u12U/.xvl.3dMclz9ETufwlez.S/dFgycd6G9dFMUaFgmd.d74i",
+    "rol": "ROL_ADMIN",
+    "__v": 0
+  },{
+    "_id": {
+      "$oid": "61b24d5ce0dae7af8f1d664a"
+    },
+    "nombre": "Elizabeth",
+    "apellidos": "Balbin Medina",
+    "email": "eli_balbinmedina@hotmail.com",
+    "password": "$2a$10$wNkI55F/faVkznmooAmCFuDZV9WqS7OSmLhnxQhleW8LxaQcK5dHO",
+    "rol": "ROL_ADMIN",
+    "__v": 0
+  },{
+    "_id": {
+      "$oid": "61e073dac08f9ca79ff1a293"
+    },
+    "nombre": "Admin",
+    "apellidos": "Mobbler",
+    "email": "coralteam.abp@gmail.com",
+    "password": "$2a$10$3s.qoFzipiGn3gIAM2GNVuYEgPTrDM77QOQaOPG5RFL2p0lXwUTYC",
+    "rol": "ROL_ADMIN",
+    "__v": 0
+  }]

@@ -1,0 +1,381 @@
+[{
+  "_id": {
+    "$oid": "62053fb9ca67632efea5276b"
+  },
+  "nombre": "Elizabeth",
+  "apellidos": "Balbin ",
+  "company": "MAX MUEBLES 2",
+  "email": "eli@gmail.com",
+  "password": "$2a$10$0D6bw6FAR/cKJOFuOxvtL.Sl37REFD4DR65IYUIjHLbju5ZqEwR46",
+  "telefono": 123456789,
+  "rol": "ROL_CLIENTE",
+  "plan": "GRATUITO",
+  "numProjects": 0,
+  "numCatalog": 0,
+  "alta": {
+    "$date": "2022-02-10T16:11:57.374Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6209379bca316e7712f799bf"
+  },
+  "nombre": "Lucas",
+  "apellidos": "Lopez",
+  "company": "MAXMUEBLES",
+  "email": "juan123@gmail.com",
+  "password": "$2a$10$xvmffp1nqu.I./dYrz1lpui26AR7x1v8IbsFsLfQlcU.3M.jYA9d.",
+  "rol": "ROL_CLIENTE",
+  "plan": "GRATUITO",
+  "numProjects": 0,
+  "numCatalog": 0,
+  "alta": {
+    "$date": "2022-02-10T17:30:47.152Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6209474d022d2ec32d84769b"
+  },
+  "nombre": "Mary",
+  "apellidos": "jsajdkanjdk",
+  "company": "MOBBLER",
+  "email": "maria123@gmail.com",
+  "password": "$2a$10$QYhUdq.f2ZP3FQmIdmZj5uz7ace4K5p.Ih6zcgLr3VYQFXJ.omfR2",
+  "rol": "ROL_CLIENTE",
+  "plan": "PAGO",
+  "numProjects": 0,
+  "numCatalog": 0,
+  "alta": {
+    "$date": "2022-02-13T17:55:53.907Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "620abbf057b6d32a39cbebc2"
+  },
+  "nombre": "Alicia",
+  "apellidos": "Quintero",
+  "company": "MAXY MUEBLES",
+  "email": "hola1@gmail.com",
+  "password": "$2a$10$ajy6wpV./gKeHPDw5Z2kdOh/1mF/lT4BFAhvM4jd6gMfOAjBbp2zK",
+  "telefono": 123456789,
+  "rol": "ROL_CLIENTE",
+  "plan": "GRATUITO",
+  "numProjects": 0,
+  "numCatalog": 0,
+  "alta": {
+    "$date": "2022-02-14T20:30:01.510Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "620abc0857b6d32a39cbebc5"
+  },
+  "nombre": "Pepe",
+  "apellidos": "Quintero",
+  "company": "MAXY2 MUEBLES",
+  "email": "hola2@gmail.com",
+  "password": "$2a$10$ldw9ACmnydEkBNsxtb2qs.NcmVIOQAm2y3dEj0cTXE6PipQbPcbK.",
+  "telefono": 123456789,
+  "rol": "ROL_CLIENTE",
+  "plan": "GRATUITO",
+  "numProjects": 0,
+  "numCatalog": 0,
+  "alta": {
+    "$date": "2022-02-14T20:30:01.510Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "620abc1657b6d32a39cbebc8"
+  },
+  "nombre": "Juana",
+  "apellidos": "Gomez",
+  "company": "MAXY3 MUEBLES",
+  "email": "hola3@gmail.com",
+  "password": "$2a$10$RTLTzs5RCjRBn8XnmSF66uqZeE95ZPl56Pt.xzi3HZTFuBnkLQaW6",
+  "telefono": 123456789,
+  "rol": "ROL_CLIENTE",
+  "plan": "GRATUITO",
+  "numProjects": 0,
+  "numCatalog": 0,
+  "alta": {
+    "$date": "2022-02-14T20:30:01.510Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "620abc3657b6d32a39cbebcc"
+  },
+  "nombre": "Lucia",
+  "apellidos": "Medina",
+  "company": "MAXY4 MUEBLES",
+  "email": "hola4@gmail.com",
+  "password": "$2a$10$oeV26J/PrvwfNcihV8feVey3VtUfmeGZ2xMecDIAixAwHlIrkfbJC",
+  "telefono": 123456789,
+  "rol": "ROL_CLIENTE",
+  "plan": "GRATUITO",
+  "numProjects": 0,
+  "numCatalog": 0,
+  "alta": {
+    "$date": "2022-02-14T20:30:01.510Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "620abc4d57b6d32a39cbebcf"
+  },
+  "nombre": "Jorge",
+  "apellidos": "Barroso",
+  "company": "MAXY5 MUEBLES",
+  "email": "hola5@gmail.com",
+  "password": "$2a$10$3hcOZbgYsy3zsh7a8aBDyOp05jzDEJ8KgmDyQkhuSONyD9o9NtKny",
+  "telefono": 123456789,
+  "rol": "ROL_CLIENTE",
+  "plan": "GRATUITO",
+  "numProjects": 0,
+  "numCatalog": 0,
+  "alta": {
+    "$date": "2022-02-14T20:30:01.510Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "620abc6357b6d32a39cbebd2"
+  },
+  "nombre": "Xavi",
+  "apellidos": "Hernandez",
+  "company": "MAXY6 MUEBLES",
+  "email": "hola6@gmail.com",
+  "password": "$2a$10$KOOFeCGjeI2jX9taJ/o79Otl6DcOp2nA5FsuHf6L5JrlP927URi.C",
+  "telefono": 123456789,
+  "rol": "ROL_CLIENTE",
+  "plan": "GRATUITO",
+  "numProjects": 0,
+  "numCatalog": 0,
+  "alta": {
+    "$date": "2022-02-14T20:30:01.510Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "620abc7c57b6d32a39cbebd5"
+  },
+  "nombre": "Brais",
+  "apellidos": "Efe",
+  "company": "Efe",
+  "email": "hola7@gmail.com",
+  "password": "$2a$10$9cQI4laRpk4uKPSzsvhkG.UqWcPQJ5v1qQHWcdeSRBO8lqhKqALWq",
+  "telefono": 123456789,
+  "rol": "ROL_CLIENTE",
+  "plan": "GRATUITO",
+  "numProjects": 0,
+  "numCatalog": 0,
+  "alta": {
+    "$date": "2022-02-14T20:30:01.510Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "620abce857b6d32a39cbebd8"
+  },
+  "nombre": "Alba",
+  "apellidos": "Cabezas",
+  "company": "Efe8",
+  "email": "hola8@gmail.com",
+  "password": "$2a$10$l9Fd5fB3P8gcSygIcAELxeGnc5ZkSwkmiZbkjLcxQeaPfg1TUbDoS",
+  "telefono": 123456789,
+  "rol": "ROL_CLIENTE",
+  "plan": "GRATUITO",
+  "numProjects": 0,
+  "numCatalog": 0,
+  "alta": {
+    "$date": "2022-02-14T20:30:01.510Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "620abd0457b6d32a39cbebdb"
+  },
+  "nombre": "Belen",
+  "apellidos": "Roig",
+  "company": "Efe9",
+  "email": "hola9@gmail.com",
+  "password": "$2a$10$zRk3UF432HVm6cIBKlX/b.BOlWeGYFoKmL85KEyKAlIN2XsklX/6C",
+  "telefono": 123456789,
+  "rol": "ROL_CLIENTE",
+  "plan": "GRATUITO",
+  "numProjects": 0,
+  "numCatalog": 0,
+  "alta": {
+    "$date": "2022-02-14T20:30:01.510Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "620abd2457b6d32a39cbebde"
+  },
+  "nombre": "Pascual",
+  "apellidos": "Sanchez",
+  "company": "Efe10",
+  "email": "hola10@gmail.com",
+  "password": "$2a$10$zwM9vFV5aNtnot.WtY9XIO0X.7dMbN3TRswmcATJbgd/1VV31i..G",
+  "telefono": 123456789,
+  "rol": "ROL_CLIENTE",
+  "plan": "GRATUITO",
+  "numProjects": 0,
+  "numCatalog": 0,
+  "alta": {
+    "$date": "2022-02-14T20:30:01.510Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "620d0f10c85605acc0154258"
+  },
+  "nombre": "Paco",
+  "apellidos": "Sanz",
+  "company": "IKEA3",
+  "email": "paco@gmail.com",
+  "password": "$2a$10$KbjyURLytIe7lIhqsNaZ0eJHu32QukIJsfK/L9oUn4/qd5nL76uDG",
+  "telefono": 123456789,
+  "rol": "ROL_CLIENTE",
+  "plan": "GRATUITO",
+  "numProjects": 0,
+  "numCatalog": 0,
+  "alta": {
+    "$date": "2022-02-15T18:13:24.689Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "620d54bea3d845bdb32a8417"
+  },
+  "nombre": "Mariah",
+  "apellidos": "Carey",
+  "company": "MaxMuebles00",
+  "email": "mariah@gmail.com",
+  "password": "$2a$10$dCswGrtjR2Nvj5I.6y3Zx.g6Rpw7Nv7oddy3/V9MNm4sZhTQCAcMK",
+  "rol": "ROL_CLIENTE",
+  "plan": "Gratuito",
+  "numProjects": 0,
+  "numCatalog": 0,
+  "alta": {
+    "$date": "2022-02-16T19:41:15.859Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "620fc60cea23fe58cd9b6181"
+  },
+  "nombre": "Mariah",
+  "apellidos": "Carey",
+  "company": "Max Muebles 0",
+  "email": "paco1234@gmail.com",
+  "password": "$2a$10$4GV7IuyoIT2HPh7gYlgcG.Y8zxcf8dw24qtYI0mjYbg/mPUwURSV6",
+  "rol": "ROL_CLIENTE",
+  "plan": "Gratuito",
+  "numProjects": 0,
+  "numCatalog": 0,
+  "alta": {
+    "$date": "2022-02-18T15:26:41.728Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6214f9f68dfca0f483bae08d"
+  },
+  "nombre": "Paco",
+  "apellidos": "Fiestas",
+  "company": "MOBBLER COMPANY",
+  "email": "paco123@gmail.com",
+  "password": "$2a$10$wqXlQP7EetCYUbjx2pGbduyQa5RJHWv5iDX7RFcab.t3un0SLrWKy",
+  "telefono": 123456789,
+  "rol": "ROL_CLIENTE",
+  "plan": "GRATUITO",
+  "numProjects": 0,
+  "numCatalog": 0,
+  "alta": {
+    "$date": "2022-02-22T14:55:34.892Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6214fbdb0138647bf9b8aa84"
+  },
+  "nombre": "Paco",
+  "apellidos": "Fiestas",
+  "company": "MOBBLER COMPANY INC",
+  "email": "paco12345@gmail.com",
+  "password": "$2a$10$ZermxQcFbt5Sux7cN98RQOQUq3ke3AwcU3DWm/Q6G7dg/pTd9Uq4e",
+  "telefono": 123456789,
+  "rol": "ROL_CLIENTE",
+  "plan": "GRATUITO",
+  "numProjects": 0,
+  "numCatalog": 0,
+  "alta": {
+    "$date": "2022-02-22T15:00:15.891Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621b456b77185c1acecbaa9d"
+  },
+  "company": "Ejemplo",
+  "email": "ejemplo@gmail.com",
+  "password": "$2a$10$oMBsXGPt7vIevvcpr97T/OYMItVle0C/Hbsy7zYqYPo8exOgg6vp.",
+  "rol": "ROL_CLIENTE",
+  "plan": "GRATUITO",
+  "numProjects": 0,
+  "numCatalog": 0,
+  "alta": {
+    "$date": "2022-02-27T09:33:14.867Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621b47931ca24209bac90d72"
+  },
+  "company": "Ejemplo2",
+  "email": "ejemplo2@gmail.com",
+  "password": "$2a$10$1SlrPdJ5x3ftsBdFoqrd/uLVIVw8zJrTmDykGbAoGwcx9QOOZhd0G",
+  "rol": "ROL_CLIENTE",
+  "plan": "GRATUITO",
+  "numProjects": 0,
+  "numCatalog": 0,
+  "alta": {
+    "$date": "2022-02-27T09:42:15.212Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621b4a231ca24209bac90d79"
+  },
+  "company": "Ejemplo3",
+  "email": "ejemplo3@gmail.com",
+  "password": "$2a$10$95DeQDJRzYDsqMCbsdR9POMGnG1/DSGLpjceVW.MXce0iiv1mlEG.",
+  "rol": "ROL_CLIENTE",
+  "plan": "GRATUITO",
+  "numProjects": 0,
+  "numCatalog": 0,
+  "alta": {
+    "$date": "2022-02-27T09:42:15.212Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621b4b2da908c162c85d449d"
+  },
+  "company": "Ejemplo4",
+  "email": "ejemplo4@gmail.com",
+  "password": "$2a$10$2VPLYKow43oFDHduK1NTe.V6lzl3DUDOEBOjlstjjZ8lXfpJoGDC.",
+  "rol": "ROL_CLIENTE",
+  "plan": "GRATUITO",
+  "numProjects": 0,
+  "numCatalog": 0,
+  "alta": {
+    "$date": "2022-02-27T09:57:35.484Z"
+  },
+  "__v": 0
+}]

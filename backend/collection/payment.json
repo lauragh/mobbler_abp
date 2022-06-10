@@ -1,0 +1,401 @@
+[{
+  "_id": {
+    "$oid": "621e3162f47725f8035f7c97"
+  },
+  "companyia": "Muebles Valencia SA",
+  "plan": "Gratuito",
+  "periodoIni": {
+    "$date": "2022-03-01T14:44:50.696Z"
+  },
+  "periodoFin": {
+    "$date": "2022-03-01T14:44:50.696Z"
+  },
+  "precio": 0,
+  "fecha": {
+    "$date": "2022-01-01T14:44:50.696Z"
+  },
+  "fechaC": {
+    "$date": "2022-02-01T14:44:50.696Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3162f47725f8035f7c98"
+  },
+  "companyia": "Muebles Valencia SA",
+  "plan": "Premium Mensual",
+  "periodoIni": {
+    "$date": "2022-03-01T14:44:50.713Z"
+  },
+  "periodoFin": {
+    "$date": "2022-03-01T14:44:50.713Z"
+  },
+  "precio": 30,
+  "fecha": {
+    "$date": "2022-02-01T14:44:50.713Z"
+  },
+  "fechaC": {
+    "$date": "2022-03-01T14:44:50.713Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3162f47725f8035f7c99"
+  },
+  "companyia": "Muebles Alicante SA",
+  "plan": "Premium Mensual",
+  "periodoIni": {
+    "$date": "2022-03-01T14:44:50.719Z"
+  },
+  "periodoFin": {
+    "$date": "2022-03-01T14:44:50.719Z"
+  },
+  "precio": 30,
+  "fecha": {
+    "$date": "2022-03-01T14:44:50.719Z"
+  },
+  "fechaC": {
+    "$date": "2022-03-01T14:44:50.719Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3162f47725f8035f7c9a"
+  },
+  "companyia": "Muebles Madrid SA",
+  "plan": "Premium Anual",
+  "periodoIni": {
+    "$date": "2022-03-01T14:44:50.723Z"
+  },
+  "periodoFin": {
+    "$date": "2022-03-01T14:44:50.723Z"
+  },
+  "precio": 265,
+  "fecha": {
+    "$date": "2022-03-01T14:44:50.723Z"
+  },
+  "fechaC": {
+    "$date": "2022-03-01T14:44:50.723Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3162f47725f8035f7c9b"
+  },
+  "companyia": "Muebles Valencia SA",
+  "plan": "Gratuito",
+  "periodoIni": {
+    "$date": "2022-03-01T14:44:50.761Z"
+  },
+  "periodoFin": {
+    "$date": "2022-03-01T14:44:50.761Z"
+  },
+  "precio": 0,
+  "fecha": {
+    "$date": "2022-03-01T14:44:50.761Z"
+  },
+  "fechaC": {
+    "$date": "2022-03-01T14:44:50.761Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3162f47725f8035f7c9c"
+  },
+  "companyia": "Muebles Alicante SA",
+  "plan": "Premium Mensual",
+  "periodoIni": {
+    "$date": "2022-03-01T14:44:50.769Z"
+  },
+  "periodoFin": {
+    "$date": "2022-03-01T14:44:50.769Z"
+  },
+  "precio": 30,
+  "fecha": {
+    "$date": "2022-03-01T14:44:50.769Z"
+  },
+  "fechaC": {
+    "$date": "2022-03-01T14:44:50.769Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3162f47725f8035f7c9d"
+  },
+  "companyia": "Muebles Valencia SA",
+  "plan": "Básico Anual",
+  "periodoIni": {
+    "$date": "2022-03-01T14:44:50.774Z"
+  },
+  "periodoFin": {
+    "$date": "2022-03-01T14:44:50.774Z"
+  },
+  "precio": 119.99,
+  "fecha": {
+    "$date": "2022-03-01T14:44:50.774Z"
+  },
+  "fechaC": {
+    "$date": "2022-03-01T14:44:50.774Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3162f47725f8035f7c9e"
+  },
+  "companyia": "Muebles Valencia SA",
+  "plan": "Premium Anual",
+  "periodoIni": {
+    "$date": "2022-03-01T14:44:50.779Z"
+  },
+  "periodoFin": {
+    "$date": "2022-03-01T14:44:50.779Z"
+  },
+  "precio": 265,
+  "fecha": {
+    "$date": "2022-03-01T14:44:50.779Z"
+  },
+  "fechaC": {
+    "$date": "2022-03-01T14:44:50.779Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3162f47725f8035f7c9f"
+  },
+  "companyia": "Muebles Madrid SA",
+  "plan": "Básico Mensual",
+  "periodoIni": {
+    "$date": "2022-03-01T14:44:50.783Z"
+  },
+  "periodoFin": {
+    "$date": "2022-03-01T14:44:50.783Z"
+  },
+  "precio": 11.99,
+  "fecha": {
+    "$date": "2022-03-01T14:44:50.783Z"
+  },
+  "fechaC": {
+    "$date": "2022-03-01T14:44:50.783Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3162f47725f8035f7ca0"
+  },
+  "companyia": "Muebles Alicante SA",
+  "plan": "Gratuito",
+  "periodoIni": {
+    "$date": "2022-03-01T14:44:50.788Z"
+  },
+  "periodoFin": {
+    "$date": "2022-03-01T14:44:50.788Z"
+  },
+  "precio": 0,
+  "fecha": {
+    "$date": "2022-03-01T14:44:50.788Z"
+  },
+  "fechaC": {
+    "$date": "2022-03-01T14:44:50.788Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3162f47725f8035f7ca1"
+  },
+  "companyia": "Muebles Alicante SA",
+  "plan": "Premium Anual",
+  "periodoIni": {
+    "$date": "2022-03-01T14:44:50.793Z"
+  },
+  "periodoFin": {
+    "$date": "2022-03-01T14:44:50.793Z"
+  },
+  "precio": 265,
+  "fecha": {
+    "$date": "2022-03-01T14:44:50.793Z"
+  },
+  "fechaC": {
+    "$date": "2022-03-01T14:44:50.793Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3162f47725f8035f7ca2"
+  },
+  "companyia": "Muebles Valencia SA",
+  "plan": "Básico Anual",
+  "periodoIni": {
+    "$date": "2022-03-01T14:44:50.799Z"
+  },
+  "periodoFin": {
+    "$date": "2022-03-01T14:44:50.799Z"
+  },
+  "precio": 119.99,
+  "fecha": {
+    "$date": "2022-03-01T14:44:50.799Z"
+  },
+  "fechaC": {
+    "$date": "2022-03-01T14:44:50.799Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3162f47725f8035f7ca3"
+  },
+  "companyia": "Muebles Valencia SA",
+  "plan": "Premium Mensual",
+  "periodoIni": {
+    "$date": "2022-03-01T14:44:50.804Z"
+  },
+  "periodoFin": {
+    "$date": "2022-03-01T14:44:50.804Z"
+  },
+  "precio": 30,
+  "fecha": {
+    "$date": "2022-03-01T14:44:50.804Z"
+  },
+  "fechaC": {
+    "$date": "2022-03-01T14:44:50.804Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3162f47725f8035f7ca4"
+  },
+  "companyia": "Muebles Alicante SA",
+  "plan": "Premium Anual",
+  "periodoIni": {
+    "$date": "2022-03-01T14:44:50.809Z"
+  },
+  "periodoFin": {
+    "$date": "2022-03-01T14:44:50.809Z"
+  },
+  "precio": 265,
+  "fecha": {
+    "$date": "2022-03-01T14:44:50.809Z"
+  },
+  "fechaC": {
+    "$date": "2022-03-01T14:44:50.809Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3162f47725f8035f7ca5"
+  },
+  "companyia": "Muebles Madrid SA",
+  "plan": "Básico Mensual",
+  "periodoIni": {
+    "$date": "2022-03-01T14:44:50.813Z"
+  },
+  "periodoFin": {
+    "$date": "2022-03-01T14:44:50.813Z"
+  },
+  "precio": 11.99,
+  "fecha": {
+    "$date": "2022-03-01T14:44:50.813Z"
+  },
+  "fechaC": {
+    "$date": "2022-03-01T14:44:50.813Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3162f47725f8035f7ca6"
+  },
+  "companyia": "Muebles Alicante SA",
+  "plan": "Premium Anual",
+  "periodoIni": {
+    "$date": "2022-03-01T14:44:50.817Z"
+  },
+  "periodoFin": {
+    "$date": "2022-03-01T14:44:50.817Z"
+  },
+  "precio": 265,
+  "fecha": {
+    "$date": "2022-03-01T14:44:50.817Z"
+  },
+  "fechaC": {
+    "$date": "2022-03-01T14:44:50.817Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3162f47725f8035f7ca7"
+  },
+  "companyia": "Muebles Valencia SA",
+  "plan": "Premium Mensual",
+  "periodoIni": {
+    "$date": "2022-03-01T14:44:50.823Z"
+  },
+  "periodoFin": {
+    "$date": "2022-03-01T14:44:50.823Z"
+  },
+  "precio": 30,
+  "fecha": {
+    "$date": "2022-03-01T14:44:50.823Z"
+  },
+  "fechaC": {
+    "$date": "2022-03-01T14:44:50.823Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3162f47725f8035f7ca8"
+  },
+  "companyia": "Muebles Madrid SA",
+  "plan": "Gratuito",
+  "periodoIni": {
+    "$date": "2022-03-01T14:44:50.828Z"
+  },
+  "periodoFin": {
+    "$date": "2022-03-01T14:44:50.828Z"
+  },
+  "precio": 0,
+  "fecha": {
+    "$date": "2022-03-01T14:44:50.828Z"
+  },
+  "fechaC": {
+    "$date": "2022-03-01T14:44:50.828Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3162f47725f8035f7ca9"
+  },
+  "companyia": "Muebles Valencia SA",
+  "plan": "Básico Mensual",
+  "periodoIni": {
+    "$date": "2022-03-01T14:44:50.834Z"
+  },
+  "periodoFin": {
+    "$date": "2022-03-01T14:44:50.834Z"
+  },
+  "precio": 11.99,
+  "fecha": {
+    "$date": "2022-03-01T14:44:50.834Z"
+  },
+  "fechaC": {
+    "$date": "2022-03-01T14:44:50.834Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3162f47725f8035f7caa"
+  },
+  "companyia": "Muebles Madrid SA",
+  "plan": "Básico Mensual",
+  "periodoIni": {
+    "$date": "2022-03-01T00:00:00Z"
+  },
+  "periodoFin": {
+    "$date": "2022-03-01T00:00:00Z"
+  },
+  "precio": 9,
+  "fecha": {
+    "$date": "2022-03-02T15:49:25.962Z"
+  },
+  "fechaC": {
+    "$date": "2022-03-01T14:44:50.839Z"
+  },
+  "__v": 0
+}]

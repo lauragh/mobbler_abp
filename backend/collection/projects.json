@@ -1,0 +1,361 @@
+[{
+  "_id": {
+    "$oid": "621e315b286ab8189f1d3449"
+  },
+  "titulo": "Salón Moderna",
+  "descripcion": "Salón Moderna para una joven",
+  "notas": "Presupuesto de: 4135500€. Su color favorito es blanco",
+  "creador": "Pablo Amorós",
+  "email_clientes": "maria.25@gmail.com",
+  "n_muebles": 13,
+  "imagen": "render1.jpg",
+  "fechaC": {
+    "$date": "2022-03-01T14:44:43.411Z"
+  },
+  "fecha": {
+    "$date": "2022-01-01T14:44:43.411Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e315b286ab8189f1d344a"
+  },
+  "titulo": "Habitación Clásica",
+  "descripcion": "Habitación Clásica para una niña",
+  "notas": "Presupuesto de: 11521500€. Su color favorito es azul",
+  "creador": "Milena Aspas",
+  "email_clientes": "lwe12@gmail.com",
+  "n_muebles": 17,
+  "imagen": "render3.jpg",
+  "fechaC": {
+    "$date": "2022-03-01T14:44:43.428Z"
+  },
+  "fecha": {
+    "$date": "2022-02-01T14:44:43.428Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e315b286ab8189f1d344b"
+  },
+  "titulo": "Baño Clásica",
+  "descripcion": "Baño Clásica para una joven",
+  "notas": "Presupuesto de: 7896500€. Su color favorito es azul",
+  "creador": "Milena Aspas",
+  "email_clientes": "lwe12@gmail.com",
+  "n_muebles": 5,
+  "imagen": "render2.jpg",
+  "fechaC": {
+    "$date": "2022-03-01T14:44:43.436Z"
+  },
+  "fecha": {
+    "$date": "2022-03-01T14:44:43.436Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e315b286ab8189f1d344c"
+  },
+  "titulo": "Salón Minimalista",
+  "descripcion": "Salón Minimalista para una niña",
+  "notas": "Presupuesto de: 8185500€. Su color favorito es azul",
+  "creador": "Pablo Amorós",
+  "email_clientes": "maria.25@gmail.com",
+  "n_muebles": 7,
+  "imagen": "render4.jpg",
+  "fechaC": {
+    "$date": "2022-03-01T14:44:43.442Z"
+  },
+  "fecha": {
+    "$date": "2022-03-01T14:44:43.442Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e315b286ab8189f1d344d"
+  },
+  "titulo": "Aseo Moderna",
+  "descripcion": "Aseo Moderna para una niña",
+  "notas": "Presupuesto de: 6698500€. Su color favorito es blanco",
+  "creador": "Pablo Amorós",
+  "email_clientes": "lwe12@gmail.com",
+  "n_muebles": 3,
+  "imagen": "render1.jpg",
+  "fechaC": {
+    "$date": "2022-03-01T14:44:43.449Z"
+  },
+  "fecha": {
+    "$date": "2022-03-01T14:44:43.449Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e315b286ab8189f1d344e"
+  },
+  "titulo": "Habitación Minimalista",
+  "descripcion": "Habitación Minimalista para una niña",
+  "notas": "Presupuesto de: 1144500€. Su color favorito es blanco",
+  "creador": "Milena Aspas",
+  "email_clientes": "maria.25@gmail.com",
+  "n_muebles": 7,
+  "imagen": "render1.jpg",
+  "fechaC": {
+    "$date": "2022-03-01T14:44:43.455Z"
+  },
+  "fecha": {
+    "$date": "2022-03-01T14:44:43.455Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e315b286ab8189f1d344f"
+  },
+  "titulo": "Aseo Moderna",
+  "descripcion": "Aseo Moderna para una joven",
+  "notas": "Presupuesto de: 4585500€. Su color favorito es blanco",
+  "creador": "Pablo Amorós",
+  "email_clientes": "maria.25@gmail.com",
+  "n_muebles": 16,
+  "imagen": "render1.jpg",
+  "fechaC": {
+    "$date": "2022-03-01T14:44:43.460Z"
+  },
+  "fecha": {
+    "$date": "2022-03-01T14:44:43.460Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e315b286ab8189f1d3450"
+  },
+  "titulo": "Baño Moderna",
+  "descripcion": "Baño Moderna para una joven",
+  "notas": "Presupuesto de: 9680500€. Su color favorito es negro",
+  "creador": "Milena Aspas",
+  "email_clientes": "lwe12@gmail.com",
+  "n_muebles": 18,
+  "imagen": "render2.jpg",
+  "fechaC": {
+    "$date": "2022-03-01T14:44:43.465Z"
+  },
+  "fecha": {
+    "$date": "2022-03-01T14:44:43.465Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e315b286ab8189f1d3451"
+  },
+  "titulo": "Salón Moderna",
+  "descripcion": "Salón Moderna para una niña",
+  "notas": "Presupuesto de: 2955500€. Su color favorito es negro",
+  "creador": "Pablo Amorós",
+  "email_clientes": "lwe12@gmail.com",
+  "n_muebles": 16,
+  "imagen": "render3.jpg",
+  "fechaC": {
+    "$date": "2022-03-01T14:44:43.472Z"
+  },
+  "fecha": {
+    "$date": "2022-03-01T14:44:43.472Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e315b286ab8189f1d3452"
+  },
+  "titulo": "Aseo Moderna",
+  "descripcion": "Aseo Moderna para una joven",
+  "notas": "Presupuesto de: 1943500€. Su color favorito es blanco",
+  "creador": "Milena Aspas",
+  "email_clientes": "maria.25@gmail.com",
+  "n_muebles": 3,
+  "imagen": "render1.jpg",
+  "fechaC": {
+    "$date": "2022-03-01T14:44:43.478Z"
+  },
+  "fecha": {
+    "$date": "2022-03-01T14:44:43.478Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e315b286ab8189f1d3453"
+  },
+  "titulo": "Baño Minimalista",
+  "descripcion": "Baño Minimalista para una niña",
+  "notas": "Presupuesto de: 7369500€. Su color favorito es azul",
+  "creador": "Pablo Amorós",
+  "email_clientes": "maria.25@gmail.com",
+  "n_muebles": 2,
+  "imagen": "render4.jpg",
+  "fechaC": {
+    "$date": "2022-03-01T14:44:43.484Z"
+  },
+  "fecha": {
+    "$date": "2022-03-01T14:44:43.484Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e315b286ab8189f1d3454"
+  },
+  "titulo": "Habitación Minimalista",
+  "descripcion": "Habitación Minimalista para una niña",
+  "notas": "Presupuesto de: 11745500€. Su color favorito es azul",
+  "creador": "Pablo Amorós",
+  "email_clientes": "maria.25@gmail.com",
+  "n_muebles": 9,
+  "imagen": "render2.jpg",
+  "fechaC": {
+    "$date": "2022-03-01T14:44:43.490Z"
+  },
+  "fecha": {
+    "$date": "2022-03-01T14:44:43.490Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e315b286ab8189f1d3455"
+  },
+  "titulo": "Salón Minimalista",
+  "descripcion": "Salón Minimalista para una joven",
+  "notas": "Presupuesto de: 7302500€. Su color favorito es azul",
+  "creador": "Pablo Amorós",
+  "email_clientes": "lwe12@gmail.com",
+  "n_muebles": 10,
+  "imagen": "render4.jpg",
+  "fechaC": {
+    "$date": "2022-03-01T14:44:43.496Z"
+  },
+  "fecha": {
+    "$date": "2022-03-01T14:44:43.496Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e315b286ab8189f1d3456"
+  },
+  "titulo": "Habitación Moderna",
+  "descripcion": "Habitación Moderna para una niña",
+  "notas": "Presupuesto de: 6550500€. Su color favorito es blanco",
+  "creador": "Milena Aspas",
+  "email_clientes": "maria.25@gmail.com",
+  "n_muebles": 17,
+  "imagen": "render4.jpg",
+  "fechaC": {
+    "$date": "2022-03-01T14:44:43.503Z"
+  },
+  "fecha": {
+    "$date": "2022-03-01T14:44:43.503Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e315b286ab8189f1d3457"
+  },
+  "titulo": "Habitación Minimalista",
+  "descripcion": "Habitación Minimalista para una joven",
+  "notas": "Presupuesto de: 1778500€. Su color favorito es blanco",
+  "creador": "Milena Aspas",
+  "email_clientes": "maria.25@gmail.com",
+  "n_muebles": 16,
+  "imagen": "render3.jpg",
+  "fechaC": {
+    "$date": "2022-03-01T14:44:43.509Z"
+  },
+  "fecha": {
+    "$date": "2022-03-01T14:44:43.509Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e315b286ab8189f1d3458"
+  },
+  "titulo": "Aseo Moderna",
+  "descripcion": "Aseo Moderna para una joven",
+  "notas": "Presupuesto de: 11193500€. Su color favorito es negro",
+  "creador": "Milena Aspas",
+  "email_clientes": "lwe12@gmail.com",
+  "n_muebles": 6,
+  "imagen": "render1.jpg",
+  "fechaC": {
+    "$date": "2022-03-01T14:44:43.515Z"
+  },
+  "fecha": {
+    "$date": "2022-03-01T14:44:43.515Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e315b286ab8189f1d3459"
+  },
+  "titulo": "Habitación Minimalista",
+  "descripcion": "Habitación Minimalista para una joven",
+  "notas": "Presupuesto de: 10550500€. Su color favorito es negro",
+  "creador": "Milena Aspas",
+  "email_clientes": "maria.25@gmail.com",
+  "n_muebles": 8,
+  "imagen": "render2.jpg",
+  "fechaC": {
+    "$date": "2022-03-01T14:44:43.522Z"
+  },
+  "fecha": {
+    "$date": "2022-03-01T14:44:43.522Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e315b286ab8189f1d345a"
+  },
+  "titulo": "Aseo Clásica",
+  "descripcion": "Aseo Clásica para una joven",
+  "notas": "Presupuesto de: 10693500€. Su color favorito es blanco",
+  "creador": "Milena Aspas",
+  "email_clientes": "lwe12@gmail.com",
+  "n_muebles": 10,
+  "imagen": "render3.jpg",
+  "fechaC": {
+    "$date": "2022-03-01T14:44:43.527Z"
+  },
+  "fecha": {
+    "$date": "2022-03-01T14:44:43.527Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e315b286ab8189f1d345b"
+  },
+  "titulo": "Aseo Clásica",
+  "descripcion": "Aseo Clásica para una joven",
+  "notas": "Presupuesto de: 1455500€. Su color favorito es azul",
+  "creador": "Milena Aspas",
+  "email_clientes": "lwe12@gmail.com",
+  "n_muebles": 14,
+  "imagen": "render4.jpg",
+  "fechaC": {
+    "$date": "2022-03-01T14:44:43.531Z"
+  },
+  "fecha": {
+    "$date": "2022-03-01T14:44:43.531Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e315b286ab8189f1d345c"
+  },
+  "titulo": "Aseo Minimalista",
+  "descripcion": "Aseo Minimalista para una niña",
+  "notas": "Presupuesto de: 11724500€. Su color favorito es blanco",
+  "creador": "Pablo Amorós",
+  "email_clientes": "maria.25@gmail.com",
+  "n_muebles": 20,
+  "imagen": "render1.jpg",
+  "fechaC": {
+    "$date": "2022-03-01T14:44:43.537Z"
+  },
+  "fecha": {
+    "$date": "2022-03-01T14:44:43.537Z"
+  },
+  "__v": 0
+}]

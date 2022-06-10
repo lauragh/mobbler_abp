@@ -1,0 +1,421 @@
+[{
+  "_id": {
+    "$oid": "621f8a3d3a88a467d7a41aa2"
+  },
+  "nombre": "Juan",
+  "apellidos": "Hernández García",
+  "company": "Decoración y estilo",
+  "nif": "14623678B",
+  "email": "genlvgmail.com",
+  "password": "$2a$10$fWUkO2WXfF1uQ/nsTFEC1.0lVOYgpBz6uYMh.3aMtIIo6M0Ej1uQq",
+  "telefono": 999487619,
+  "direccion": "Calle Músico Pau Casals",
+  "imagen": "perfil4.jpg",
+  "rol": "ROL_CLIENTE",
+  "plan": "Básico",
+  "numProjects": 83,
+  "numCatalog": 71,
+  "alta": {
+    "$date": "2022-01-01T15:16:13.145Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621f8a3d3a88a467d7a41aa3"
+  },
+  "nombre": "Juan",
+  "apellidos": "Gómez Gómez",
+  "company": "Disseny",
+  "nif": "84538479Y",
+  "email": "poapxgmail.com",
+  "password": "$2a$10$L656FVE74dCoyDinJDH8pe3asUfFl/kexa3sXIvcbzeNUA5ntA8MO",
+  "telefono": 914390210,
+  "direccion": "Calle Pardo Gimeno",
+  "imagen": "perfil1.jpg",
+  "rol": "ROL_CLIENTE",
+  "plan": "Gratuito",
+  "numProjects": 48,
+  "numCatalog": 36,
+  "alta": {
+    "$date": "2022-02-01T15:16:13.145Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621f8a3d3a88a467d7a41aa4"
+  },
+  "nombre": "Juan",
+  "apellidos": "Hernández Gómez",
+  "company": "Decoración y estilo",
+  "nif": "92608476B",
+  "email": "ultrqgmail.com",
+  "password": "$2a$10$FbBMXR7DGxtC5HM.J5xFXegxjKCg89VcpUnej0Pu8DemvEIpQemKW",
+  "telefono": 908858042,
+  "direccion": "Calle San Francisco",
+  "imagen": "perfil4.jpg",
+  "rol": "ROL_CLIENTE",
+  "plan": "Gratuito",
+  "numProjects": 46,
+  "numCatalog": 12,
+  "alta": {
+    "$date": "2022-03-02T15:16:13.145Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621f8a3d3a88a467d7a41aa5"
+  },
+  "nombre": "Maria",
+  "apellidos": "Gómez Hernández",
+  "company": "Decoración y estilo",
+  "nif": "37279071X",
+  "email": "qfsqogmail.com",
+  "password": "$2a$10$XrFloynP6l6g974QcMQag./kAS5xpnV6H1.Al2IPsD4s1o5cnodjO",
+  "telefono": 967452251,
+  "direccion": "Calle San Francisco",
+  "imagen": "perfil2.jpg",
+  "rol": "ROL_CLIENTE",
+  "plan": "Gratuito",
+  "numProjects": 69,
+  "numCatalog": 62,
+  "alta": {
+    "$date": "2022-03-02T15:16:13.145Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621f8a3e3a88a467d7a41aa6"
+  },
+  "nombre": "Juan",
+  "apellidos": "García Hernández",
+  "company": "Decoración y estilo",
+  "nif": "46736025N",
+  "email": "bxspkgmail.com",
+  "password": "$2a$10$cv1HiXj.8Y6tGFwtZnpNDegkJDEKQvWlHk6n35AaFdNvyovqiIYkS",
+  "telefono": 969689161,
+  "direccion": "Calle Pardo Gimeno",
+  "imagen": "perfil3.jpg",
+  "rol": "ROL_CLIENTE",
+  "plan": "Gratuito",
+  "numProjects": 89,
+  "numCatalog": 3,
+  "alta": {
+    "$date": "2022-03-02T15:16:13.145Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621f8a3e3a88a467d7a41aa7"
+  },
+  "nombre": "Carmen",
+  "apellidos": "Gómez García",
+  "company": "Decoración y estilo",
+  "nif": "67549081S",
+  "email": "yldylgmail.com",
+  "password": "$2a$10$e32Zfaf8YfvSDpKnIsvM.u/rl7qC2LFJClaLmNo/7rSS6Z2Gd2zlG",
+  "telefono": 942027253,
+  "direccion": "Calle San Francisco",
+  "imagen": "perfil2.jpg",
+  "rol": "ROL_CLIENTE",
+  "plan": "Básico",
+  "numProjects": 92,
+  "numCatalog": 65,
+  "alta": {
+    "$date": "2022-03-02T15:16:13.145Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621f8a3e3a88a467d7a41aa8"
+  },
+  "nombre": "Carmen",
+  "apellidos": "García Hernández",
+  "company": "Disseny",
+  "nif": "29513868M",
+  "email": "yluysgmail.com",
+  "password": "$2a$10$rC02xnjzYy9kOSmMkaZgge/sB6zmip45hDbfgFZansdigY1FwfSMS",
+  "telefono": 924887872,
+  "direccion": "Calle Pardo Gimeno",
+  "imagen": "perfil4.jpg",
+  "rol": "ROL_CLIENTE",
+  "plan": "Básico",
+  "numProjects": 6,
+  "numCatalog": 70,
+  "alta": {
+    "$date": "2022-03-02T15:16:13.145Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621f8a3e3a88a467d7a41aa9"
+  },
+  "nombre": "Maria",
+  "apellidos": "García Hernández",
+  "company": "Disseny",
+  "nif": "54716939G",
+  "email": "olidggmail.com",
+  "password": "$2a$10$oTCYPKd25HhdELgO8NtpCe0E0XqNcpcbDJY10om/ggNhzCOlSiR8m",
+  "telefono": 912785806,
+  "direccion": "Calle San Francisco",
+  "imagen": "perfil3.jpg",
+  "rol": "ROL_CLIENTE",
+  "plan": "Gratuito",
+  "numProjects": 53,
+  "numCatalog": 14,
+  "alta": {
+    "$date": "2022-03-02T15:16:13.145Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621f8a3e3a88a467d7a41aaa"
+  },
+  "nombre": "Juan",
+  "apellidos": "Gómez Hernández",
+  "company": "Decoración y estilo",
+  "nif": "39439738P",
+  "email": "prplbgmail.com",
+  "password": "$2a$10$y3uJkMiKtGp.l.qUCAU9.O2B7yBIbufktd.qiTnkJ1iYdaGABOH6y",
+  "telefono": 931898963,
+  "direccion": "Calle Pardo Gimeno",
+  "imagen": "perfil4.jpg",
+  "rol": "ROL_CLIENTE",
+  "plan": "Gratuito",
+  "numProjects": 73,
+  "numCatalog": 70,
+  "alta": {
+    "$date": "2022-03-02T15:16:13.145Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621f8a3e3a88a467d7a41aab"
+  },
+  "nombre": "Maria",
+  "apellidos": "García Hernández",
+  "company": "Disseny",
+  "nif": "18374153X",
+  "email": "npryegmail.com",
+  "password": "$2a$10$VK7QK/k/taC0NCH/r/3G7OLoz4j1VGrqmR3tTQB9g7hRrbpxC6cXy",
+  "telefono": 943813835,
+  "direccion": "Calle Músico Pau Casals",
+  "imagen": "perfil4.jpg",
+  "rol": "ROL_CLIENTE",
+  "plan": "Gratuito",
+  "numProjects": 90,
+  "numCatalog": 23,
+  "alta": {
+    "$date": "2022-03-02T15:16:13.145Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621f8a3e3a88a467d7a41aac"
+  },
+  "nombre": "Maria",
+  "apellidos": "Soler García",
+  "company": "Disseny",
+  "nif": "77639744L",
+  "email": "jjiwygmail.com",
+  "password": "$2a$10$vHhKRBQDn3zE7xyP9u6yBehQJqpf2MEnkVEnRaT8mbhxmr5fqoitq",
+  "telefono": 988774855,
+  "direccion": "Calle Pardo Gimeno",
+  "imagen": "perfil3.jpg",
+  "rol": "ROL_CLIENTE",
+  "plan": "Gratuito",
+  "numProjects": 82,
+  "numCatalog": 85,
+  "alta": {
+    "$date": "2022-03-02T15:16:13.145Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621f8a3e3a88a467d7a41aad"
+  },
+  "nombre": "Maria",
+  "apellidos": "Soler García",
+  "company": "Decoración y estilo",
+  "nif": "94717352T",
+  "email": "nmwgtgmail.com",
+  "password": "$2a$10$vcmuJdDGm8N0orqomJ.9IuOxwHeX1kHTBxZ7D7j.qmXF3V64RMHVm",
+  "telefono": 915271672,
+  "direccion": "Calle San Francisco",
+  "imagen": "perfil1.jpg",
+  "rol": "ROL_CLIENTE",
+  "plan": "Gratuito",
+  "numProjects": 88,
+  "numCatalog": 16,
+  "alta": {
+    "$date": "2022-03-02T15:16:13.145Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621f8a3e3a88a467d7a41aae"
+  },
+  "nombre": "Carmen",
+  "apellidos": "Gómez Soler",
+  "company": "Disseny",
+  "nif": "39961936M",
+  "email": "ykowkgmail.com",
+  "password": "$2a$10$OHYedfRKlemxlowWe5s5XOcm2s5yAEby1pqh5.wk5BvbhNGUp.JAS",
+  "telefono": 906552525,
+  "direccion": "Calle Músico Pau Casals",
+  "imagen": "perfil4.jpg",
+  "rol": "ROL_CLIENTE",
+  "plan": "Básico",
+  "numProjects": 74,
+  "numCatalog": 10,
+  "alta": {
+    "$date": "2022-03-02T15:16:13.145Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621f8a3f3a88a467d7a41aaf"
+  },
+  "nombre": "Carmen",
+  "apellidos": "Soler Hernández",
+  "company": "Decoración y estilo",
+  "nif": "42124880A",
+  "email": "otbhvgmail.com",
+  "password": "$2a$10$gYqkA7fLrfYmHfiehKhnC.ozuNqZdsW9zphgsdI5JQ8k4dDVrQ8Iu",
+  "telefono": 945835820,
+  "direccion": "Calle San Francisco",
+  "imagen": "perfil2.jpg",
+  "rol": "ROL_CLIENTE",
+  "plan": "Básico",
+  "numProjects": 21,
+  "numCatalog": 26,
+  "alta": {
+    "$date": "2022-03-02T15:16:13.145Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621f8a3f3a88a467d7a41ab0"
+  },
+  "nombre": "Carmen",
+  "apellidos": "García Soler",
+  "company": "Disseny",
+  "nif": "104549640Y",
+  "email": "qwefvgmail.com",
+  "password": "$2a$10$LE8Dbw9L8nO/1/2wLm2tDOqT3YkFEys8GYqq0Z8jh7DKTC9CDZbc6",
+  "telefono": 936365385,
+  "direccion": "Calle Músico Pau Casals",
+  "imagen": "perfil3.jpg",
+  "rol": "ROL_CLIENTE",
+  "plan": "Gratuito",
+  "numProjects": 25,
+  "numCatalog": 57,
+  "alta": {
+    "$date": "2022-03-02T15:16:13.145Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621f8a3f3a88a467d7a41ab1"
+  },
+  "nombre": "Carmen",
+  "apellidos": "Gómez Soler",
+  "company": "Disseny",
+  "nif": "105109158B",
+  "email": "xhgxrgmail.com",
+  "password": "$2a$10$o5KHkU.gsv1FrNfFhLMmC.7ZNQZ2g0OpBhais0pkoHlSKAdlDdTr2",
+  "telefono": 910784956,
+  "direccion": "Calle Pardo Gimeno",
+  "imagen": "perfil1.jpg",
+  "rol": "ROL_CLIENTE",
+  "plan": "Gratuito",
+  "numProjects": 77,
+  "numCatalog": 90,
+  "alta": {
+    "$date": "2022-03-02T15:16:13.145Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621f8a3f3a88a467d7a41ab2"
+  },
+  "nombre": "Maria",
+  "apellidos": "Hernández Gómez",
+  "company": "Disseny",
+  "nif": "50490675K",
+  "email": "cilaxgmail.com",
+  "password": "$2a$10$JrXxiZdAFSFUZOlRQCRq1uc4BexQcPMHqRw4PusRDxM3NcN4kVIMO",
+  "telefono": 963203293,
+  "direccion": "Calle Pardo Gimeno",
+  "imagen": "perfil2.jpg",
+  "rol": "ROL_CLIENTE",
+  "plan": "Gratuito",
+  "numProjects": 40,
+  "numCatalog": 85,
+  "alta": {
+    "$date": "2022-03-02T15:16:13.145Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621f8a3d3a88a467d7a41aa1"
+  },
+  "nombre": "Carmen",
+  "apellidos": "Gómez García",
+  "company": "Decoración y estilo",
+  "nif": "25242283M",
+  "email": "ljkepgmail.com",
+  "password": "$2a$10$A7v75dZ9KkPwNV2VdvpvduMtCOLBPt8iucEEPMYH6xLZI8fk9HxwS",
+  "telefono": 928046934,
+  "direccion": "Calle Músico Pau Casals",
+  "imagen": "perfil4.jpg",
+  "rol": "ROL_CLIENTE",
+  "plan": "Gratuito",
+  "numProjects": 59,
+  "numCatalog": 9,
+  "alta": {
+    "$date": "2022-03-02T15:16:13.145Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621f8a3d3a88a467d7a41aa0"
+  },
+  "nombre": "Carmen",
+  "apellidos": "Hernández Hernández",
+  "company": "Decoración y estilo",
+  "nif": "26254215C",
+  "email": "sxejagmail.com",
+  "password": "$2a$10$fL5HTdHgmSNXd8voxrx/KOXRuM/imhy0qbGK9FWTeQM3nGYH7/R7W",
+  "telefono": 961494905,
+  "direccion": "Calle Pardo Gimeno",
+  "imagen": "perfil2.jpg",
+  "rol": "ROL_CLIENTE",
+  "plan": "Básico",
+  "numProjects": 33,
+  "numCatalog": 1,
+  "alta": {
+    "$date": "2022-03-02T15:16:13.145Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621f8a3d3a88a467d7a41a9f"
+  },
+  "nombre": "Maria",
+  "apellidos": "Soler Hernández",
+  "company": "Decoración y estilo",
+  "nif": "94957499V",
+  "email": "lbnyjgmail.com",
+  "password": "$2a$10$orKMHeQ2oelhdRJcqc.kfuMRPGAELqAhOzERPYq02Dbp48DyGTyqe",
+  "telefono": 954529358,
+  "direccion": "Calle Músico Pau Casals",
+  "imagen": "perfil3.jpg",
+  "rol": "ROL_CLIENTE",
+  "plan": "Gratuito",
+  "numProjects": 100,
+  "numCatalog": 10,
+  "alta": {
+    "$date": "2022-03-02T15:16:13.145Z"
+  },
+  "__v": 0
+}]

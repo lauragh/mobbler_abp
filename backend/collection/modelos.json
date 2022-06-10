@@ -1,0 +1,461 @@
+[{
+  "_id": {
+    "$oid": "621e3151eb41772b17bbadf2"
+  },
+  "nombre": "Silla Escritorio",
+  "catalogo": {
+    "$oid": "621e3150eb41772b17bbadb5"
+  },
+  "catalogo_nombre": "Tikamoon",
+  "descripcion": "Mesa cuadrada, de material porcelanoso, alta calidad",
+  "medida_ancho": 110,
+  "medida_alto": 220,
+  "medida_largo": 163,
+  "tags": [
+    "mesa",
+    "cuadrado"
+  ],
+  "archivo": "m_cristal.blend",
+  "imagen": "silla1.jpg",
+  "fecha": {
+    "$date": "2022-02-01T14:44:32.499Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3151eb41772b17bbadf4"
+  },
+  "nombre": "Sofa Comedor",
+  "catalogo": {
+    "$oid": "621e3150eb41772b17bbadb5"
+  },
+  "catalogo_nombre": "Tikamoon",
+  "descripcion": "Mesa amplia extensible, apto para 8 personas",
+  "medida_ancho": 175,
+  "medida_alto": 197,
+  "medida_largo": 172,
+  "tags": [
+    "mesa",
+    "cuadrado"
+  ],
+  "archivo": "cuadrado.blend",
+  "imagen": "silla1.jpg",
+  "fecha": {
+    "$date": "2022-01-01T14:44:32.507Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3151eb41772b17bbadf6"
+  },
+  "nombre": "Mesa Comedor",
+  "catalogo": {
+    "$oid": "621e3150eb41772b17bbadb7"
+  },
+  "catalogo_nombre": "Werdön",
+  "descripcion": "Mesa cuadrada, de material porcelanoso, alta calidad",
+  "medida_ancho": 72,
+  "medida_alto": 63,
+  "medida_largo": 157,
+  "tags": [
+    "mesa",
+    "cristal"
+  ],
+  "archivo": "m_cristal.blend",
+  "imagen": "silla4.jpg",
+  "fecha": {
+    "$date": "2022-03-01T14:44:32.474Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3151eb41772b17bbadf8"
+  },
+  "nombre": "Silla Escritorio",
+  "catalogo": {
+    "$oid": "621e3150eb41772b17bbadb4"
+  },
+  "catalogo_nombre": "Plebo",
+  "descripcion": "Silla cómoda, con un diseño muy elegante",
+  "medida_ancho": 227,
+  "medida_alto": 51,
+  "medida_largo": 135,
+  "tags": [
+    "mesa",
+    "cristal"
+  ],
+  "archivo": "mesa.blend",
+  "imagen": "silla3.jpg",
+  "fecha": {
+    "$date": "2022-03-01T14:44:32.514Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3151eb41772b17bbadfa"
+  },
+  "nombre": "Silla Terraza",
+  "catalogo": {
+    "$oid": "621e3150eb41772b17bbadb7"
+  },
+  "catalogo_nombre": "Werdön",
+  "descripcion": "Mesa amplia extensible, apto para 8 personas",
+  "medida_ancho": 122,
+  "medida_alto": 209,
+  "medida_largo": 125,
+  "tags": [
+    "mesa",
+    "cristal"
+  ],
+  "archivo": "mesa.blend",
+  "imagen": "silla3.jpg",
+  "fecha": {
+    "$date": "2022-03-01T14:44:32.519Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3151eb41772b17bbadfc"
+  },
+  "nombre": "Sofa Comedor",
+  "catalogo": {
+    "$oid": "621e3150eb41772b17bbadb4"
+  },
+  "catalogo_nombre": "Plebo",
+  "descripcion": "Mesa amplia extensible, apto para 8 personas",
+  "medida_ancho": 139,
+  "medida_alto": 221,
+  "medida_largo": 199,
+  "tags": [
+    "mesa",
+    "cristal"
+  ],
+  "archivo": "mesa.blend",
+  "imagen": "silla3.jpg",
+  "fecha": {
+    "$date": "2022-03-01T14:44:32.523Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3151eb41772b17bbadfe"
+  },
+  "nombre": "Sofa Terraza",
+  "catalogo": {
+    "$oid": "621e3150eb41772b17bbadb7"
+  },
+  "catalogo_nombre": "Werdön",
+  "descripcion": "Mesa cuadrada, de material porcelanoso, alta calidad",
+  "medida_ancho": 65,
+  "medida_alto": 62,
+  "medida_largo": 167,
+  "tags": [
+    "silla",
+    "gaming"
+  ],
+  "archivo": "mesa.blend",
+  "imagen": "silla4.jpg",
+  "fecha": {
+    "$date": "2022-03-01T14:44:32.527Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3151eb41772b17bbae00"
+  },
+  "nombre": "Mesa Escritorio",
+  "catalogo": {
+    "$oid": "621e3150eb41772b17bbadb5"
+  },
+  "catalogo_nombre": "Tikamoon",
+  "descripcion": "Silla cómoda, con un diseño muy elegante",
+  "medida_ancho": 40,
+  "medida_alto": 213,
+  "medida_largo": 219,
+  "tags": [
+    "mesa",
+    "cuadrado"
+  ],
+  "archivo": "mesa.blend",
+  "imagen": "silla4.jpg",
+  "fecha": {
+    "$date": "2022-03-01T14:44:32.531Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3151eb41772b17bbae02"
+  },
+  "nombre": "Silla Terraza",
+  "catalogo": {
+    "$oid": "621e3150eb41772b17bbadb4"
+  },
+  "catalogo_nombre": "Plebo",
+  "descripcion": "Mesa cuadrada, de material porcelanoso, alta calidad",
+  "medida_ancho": 207,
+  "medida_alto": 172,
+  "medida_largo": 149,
+  "tags": [
+    "mesa",
+    "redondo"
+  ],
+  "archivo": "cuadrado.blend",
+  "imagen": "silla3.jpg",
+  "fecha": {
+    "$date": "2022-03-01T14:44:32.535Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3151eb41772b17bbae04"
+  },
+  "nombre": "Silla Comedor",
+  "catalogo": {
+    "$oid": "621e3150eb41772b17bbadbe"
+  },
+  "catalogo_nombre": "Tikamoon",
+  "descripcion": "Mesa cuadrada, de material porcelanoso, alta calidad",
+  "medida_ancho": 175,
+  "medida_alto": 211,
+  "medida_largo": 181,
+  "tags": [
+    "mesa",
+    "redondo"
+  ],
+  "archivo": "m_cristal.blend",
+  "imagen": "silla2.jpg",
+  "fecha": {
+    "$date": "2022-03-01T14:44:32.539Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3151eb41772b17bbae06"
+  },
+  "nombre": "Silla Escritorio",
+  "catalogo": {
+    "$oid": "621e3150eb41772b17bbadbd"
+  },
+  "catalogo_nombre": "Werdön",
+  "descripcion": "Mesa amplia extensible, apto para 8 personas",
+  "medida_ancho": 37,
+  "medida_alto": 121,
+  "medida_largo": 119,
+  "tags": [
+    "mesa",
+    "cuadrado"
+  ],
+  "archivo": "cuadrado.blend",
+  "imagen": "silla2.jpg",
+  "fecha": {
+    "$date": "2022-03-01T14:44:32.544Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3151eb41772b17bbae08"
+  },
+  "nombre": "Sofa Terraza",
+  "catalogo": {
+    "$oid": "621e3150eb41772b17bbadba"
+  },
+  "catalogo_nombre": "Plebo",
+  "descripcion": "Mesa amplia extensible, apto para 8 personas",
+  "medida_ancho": 115,
+  "medida_alto": 33,
+  "medida_largo": 125,
+  "tags": [
+    "mesa",
+    "cristal"
+  ],
+  "archivo": "mesa.blend",
+  "imagen": "silla3.jpg",
+  "fecha": {
+    "$date": "2022-03-01T14:44:32.548Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3151eb41772b17bbae0a"
+  },
+  "nombre": "Silla Escritorio",
+  "catalogo": {
+    "$oid": "621e3150eb41772b17bbadb4"
+  },
+  "catalogo_nombre": "Plebo",
+  "descripcion": "Mesa amplia extensible, apto para 8 personas",
+  "medida_ancho": 129,
+  "medida_alto": 86,
+  "medida_largo": 40,
+  "tags": [
+    "mesa",
+    "escritorio"
+  ],
+  "archivo": "mesa.blend",
+  "imagen": "silla4.jpg",
+  "fecha": {
+    "$date": "2022-03-01T14:44:32.552Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3151eb41772b17bbae0c"
+  },
+  "nombre": "Silla Comedor",
+  "catalogo": {
+    "$oid": "621e3150eb41772b17bbadbc"
+  },
+  "catalogo_nombre": "Werdön",
+  "descripcion": "Mesa cuadrada, de material porcelanoso, alta calidad",
+  "medida_ancho": 134,
+  "medida_alto": 96,
+  "medida_largo": 214,
+  "tags": [
+    "silla",
+    "gaming"
+  ],
+  "archivo": "m_cristal.blend",
+  "imagen": "silla3.jpg",
+  "fecha": {
+    "$date": "2022-03-01T14:44:32.557Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3151eb41772b17bbae0e"
+  },
+  "nombre": "Mesa Comedor",
+  "catalogo": {
+    "$oid": "621e3150eb41772b17bbadc3"
+  },
+  "catalogo_nombre": "Plebo",
+  "descripcion": "Mesa cuadrada, de material porcelanoso, alta calidad",
+  "medida_ancho": 74,
+  "medida_alto": 201,
+  "medida_largo": 192,
+  "tags": [
+    "mesa",
+    "cuadrado"
+  ],
+  "archivo": "cuadrado.blend",
+  "imagen": "silla3.jpg",
+  "fecha": {
+    "$date": "2022-03-01T14:44:32.561Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3151eb41772b17bbae10"
+  },
+  "nombre": "Sofa Escritorio",
+  "catalogo": {
+    "$oid": "621e3150eb41772b17bbadb4"
+  },
+  "catalogo_nombre": "Plebo",
+  "descripcion": "Mesa cuadrada, de material porcelanoso, alta calidad",
+  "medida_ancho": 133,
+  "medida_alto": 170,
+  "medida_largo": 148,
+  "tags": [
+    "silla",
+    "gaming"
+  ],
+  "archivo": "cuadrado.blend",
+  "imagen": "silla2.jpg",
+  "fecha": {
+    "$date": "2022-03-01T14:44:32.564Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3151eb41772b17bbae12"
+  },
+  "nombre": "Mesa Comedor",
+  "catalogo": {
+    "$oid": "621e3150eb41772b17bbadbc"
+  },
+  "catalogo_nombre": "Werdön",
+  "descripcion": "Mesa cuadrada, de material porcelanoso, alta calidad",
+  "medida_ancho": 178,
+  "medida_alto": 29,
+  "medida_largo": 122,
+  "tags": [
+    "mesa",
+    "escritorio"
+  ],
+  "archivo": "m_cristal.blend",
+  "imagen": "silla3.jpg",
+  "fecha": {
+    "$date": "2022-03-01T14:44:32.568Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3151eb41772b17bbae14"
+  },
+  "nombre": "Sofa Comedor",
+  "catalogo": {
+    "$oid": "621e3150eb41772b17bbadc6"
+  },
+  "catalogo_nombre": "Tikamoon",
+  "descripcion": "Mesa amplia extensible, apto para 8 personas",
+  "medida_ancho": 186,
+  "medida_alto": 79,
+  "medida_largo": 106,
+  "tags": [
+    "mesa",
+    "redondo"
+  ],
+  "archivo": "mesa.blend",
+  "imagen": "silla1.jpg",
+  "fecha": {
+    "$date": "2022-03-01T14:44:32.572Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3151eb41772b17bbae16"
+  },
+  "nombre": "Sofa Escritorio",
+  "catalogo": {
+    "$oid": "621e3150eb41772b17bbadba"
+  },
+  "catalogo_nombre": "Plebo",
+  "descripcion": "Silla cómoda, con un diseño muy elegante",
+  "medida_ancho": 90,
+  "medida_alto": 156,
+  "medida_largo": 169,
+  "tags": [
+    "mesa",
+    "escritorio"
+  ],
+  "archivo": "mesa.blend",
+  "imagen": "silla2.jpg",
+  "fecha": {
+    "$date": "2022-03-01T14:44:32.503Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621e3151eb41772b17bbae18"
+  },
+  "nombre": "Sofa Escritorio",
+  "catalogo": {
+    "$oid": "621e3150eb41772b17bbadc6"
+  },
+  "catalogo_nombre": "Tikamoon",
+  "descripcion": "Silla cómoda, con un diseño muy elegante",
+  "medida_ancho": 192,
+  "medida_alto": 80,
+  "medida_largo": 25,
+  "tags": [
+    "silla",
+    "gaming"
+  ],
+  "archivo": "cuadrado.blend",
+  "imagen": "silla3.jpg",
+  "fecha": {
+    "$date": "2022-03-01T14:44:32.510Z"
+  },
+  "__v": 0
+}]
