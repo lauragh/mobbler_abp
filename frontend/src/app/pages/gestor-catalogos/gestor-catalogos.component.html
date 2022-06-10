@@ -1,0 +1,81 @@
+<div>
+    <div class="navBar">
+        <div class="row justify-content-center">
+            <img (click)="atras();" class="flecha" src="assets/img/flecha-izquierda-black.png">
+            <!-- Nav -->
+            <ul class="nav nav1">
+                <li style="cursor:pointer" class="nav-item">
+                    <a class="nav2 colorLetraOscura" (click)="gestorProyectos();"><img class="icono" src="assets/img/proyecto-negro.png">Proyectos</a>
+                </li>
+                <li class="separador nav-item">|</li>
+                <li style="cursor:pointer" class="nav-item">
+                    <a class="nav2 colorLetraOscura" (click)="gestorCatalogos();"><img class="icono" src="assets/img/libro-black.png"> Catálogos</a>
+                </li>
+            </ul>
+        </div>
+        <!-- Segundo nav -->
+        <div class="linea">
+            <!-- Ordenar por -->
+            <div style="width:max-content; display:flex; align-items: center;">
+                <div>
+                    <select #ordenCampo (change)="ordenar()" name="ordenar">
+                        <option selected="selected">Ordenar por</option>
+                        <option value="nombreA">Titulo Ascendente</option>
+                        <option value="nombreD">Titulo Descendente</option>
+                        <option value="fabricanteA">Fabricante Ascendente</option>
+                        <option value="fabricanteD">Fabricante Descendente</option>
+                    </select>
+                </div>
+
+                <!-- Buscador -->
+                <div class="col-sm-8">
+                    <div class="input-group">
+                        <input #txtBuscar type="text" class="form-control " (keyup)="cargarCatalogos(txtBuscar.value)" id="fname" placeholder="Buscar">
+                        <div class="input-group-append">
+                            <span class="input-group-text micursor" (click)="txtBuscar.value =''; cargarCatalogos(txtBuscar.value)"><i class="fa fa-times-circle"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-3">
+                <h4 class="colorLetraOscura">Catalogos {{numCatalogos}}/{{numCTotal}}</h4>
+            </div>
+            <div class="col-lg-3 col-md-3">
+                <app-pagination (cambiarPagina)="cambiarPagina( $event ) " [texto]="true " [totalRegistros]="totalcatalogos" [registroActual]="posicionactual+1 " [registrosPorPagina]="registrosporpagina "></app-pagination>
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- Contenido -->
+    <!-- añadir tarjeta -->
+    <div class="cards row justify-content-around" #cards> </div>
+    <div #modulo style="display:none" class="modal" aria-hidden="true" aria-labelledby="myModalLabel" bsModal #myModal="bs-modal" role="dialog" tabindex="-1">
+        <div class="modal-dialog">
+            <div id="scroll_modelos" class="modal-content">
+                <div class="modal-header justify-content-center">
+                    <button aria-hidden="true" class="close" data-dismiss="modal" type="button" (click)="offModal1()">
+                <i class="tim-icons icon-simple-remove"> </i>
+                </button>
+                    <h4 #titulo class="title title-up"> Modelos del proyecto</h4>
+                </div>
+                <div class="modal-body" *ngFor="let modelo of listaModelos">
+                    <div _ngcontent-ujv-c79="" class="cards row justify-content-around" style="display: flex; margin-top: 20px;">
+                        <div _ngcontent-ujv-c79="" class="texto" style="display: flex;width: 450px; margin: 0px;">
+                            <img _ngcontent-ujv-c79="" src="{{'assets/img/modelos/'+ modelo.imagen}}" style="width: 200px; height:160px">
+                            <div _ngcontent-ujv-c79="" style="background-color: #ffffff;">
+                                <h4 #titulo class="title title-up">Especificaciones:</h4>
+                                <p _ngcontent-ujv-c79="">{{modelo.nombre}}</p>
+                                <p _ngcontent-ujv-c79="">{{modelo.descripcion}}</p>
+                                <p _ngcontent-ujv-c79="">{{modelo. medida_ancho + 'm x ' + modelo.medida_alto+'m'}}</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

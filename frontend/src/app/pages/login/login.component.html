@@ -1,0 +1,68 @@
+<div class="wrapper">
+    <div class="page-header">
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <img alt="mobbler-icon" src="assets/img/NOMBRE.png">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <img alt="mobbler-logo" src="assets/img/favicon.png" class="img-fluid mobbler-logo" width="150" height="150">
+                            </div>
+                            <div class="col">
+                                <p>Ayuda a tus clientes a decidir cómo diseñar sus habitaciones</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 ml-auto mr-auto">
+                        <div class="background">
+                            <div class="shape"></div>
+                            <div class="shape"></div>
+                        </div>
+                        <form class="form" id="login-form" (ngSubmit)="login()" [formGroup]="loginForm">
+                            <h3>Login</h3>
+
+                            <label for="username">Email (*)</label>
+                            <input class="form-control" placeholder="Email" type="text" formControlName="email" required>
+                            <alert [type]="'warning'" *ngIf="!isRequired && !campoValido('email')">
+                                El campo 'E-mail' es <strong style="color:red;">obligatorio</strong>
+                            </alert>
+
+                            <alert [type]="'warning'" *ngIf="isRequired && !campoValido('email')">
+                                El campo 'E-mail' no es <strong style="color:red;">válido</strong>
+                            </alert>
+
+                            <label for="password">Contraseña (*)</label>
+                            <input class="form-control" placeholder="Contraseña" type="password" formControlName="password" required>
+                            <alert [type]="'warning'" *ngIf="!isRequired">
+                                El campo 'Contraseña' es <strong style="color:red;">obligatorio</strong>
+                            </alert>
+                            <alert [type]="'warning'" *ngIf="isRequired && !campoValido('password')">
+                                El campo 'Contraseña' no es <strong style="color:red;">válido</strong>
+                            </alert>
+
+                            <div class="form-check text-left">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" formControlName="remember"/>
+                                    <span class="form-check-sign"></span>Recuérdame
+                                </label>
+                            </div>
+                            <button type="submit" form="login-form" class="btn btn-primary btn-neutral"><i class="fas fa-spinner fa-spin m-r-10" *ngIf="waiting"></i>Entrar</button>
+                            <div class="social">
+                                <!-- <div id="my-signin2"></div> -->
+                                <div id="customBtn" class="go"><i class="fab fa-google"></i> Google</div>
+                                <div class="fb"><i class="fab fa-facebook"></i> Facebook</div>
+                            </div>
+
+                            <div class="registro">
+                                <p>¿No tienes cuenta? <a [routerLink]="['/register']"><b>Regístrate</b></a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>

@@ -1,0 +1,202 @@
+<div id="contenedor">
+    <app-sidebar></app-sidebar>
+    <section class="tabla">
+        <div class="row">
+            <div class="col">
+                <h1 class="font">Modelos</h1>
+            </div>
+            <div class="col">
+                <div class="float-right">
+                    <button (click)="onModal1()" class="nav-link btn btn-primary">Nuevo <i class="fa fa-plus m-l-10"></i></button>
+                </div>
+            </div>
+            <hr class="separador">
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="input-group">
+                    <input #txtBuscar type="text" class="form-control" (keyup)="cargarModelos(txtBuscar.value)" id="fname" placeholder="Buscar">
+                    <div class="input-group-append">
+                        <span class="input-group-text" (click)="txtBuscar.value =''; cargarModelos(txtBuscar.value)"><i class="fa fa-times-circle"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="linea col-sm-6">
+                <form id="formulario" method="post">
+                    <p class="colorLetraOscura">Inicio: </p>
+                    <div class="col-lg-6 col-md-6">
+                        <input #fechaIni value="{{inicio}}" type="date">
+                    </div>
+                    <p class="colorLetraOscura">Fin: </p>
+                    <div class="col-lg-6 col-md-6">
+                        <input #fechaFin value="{{fin}}" type="date">
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-2">
+                <div class="linea">
+                    <button class="nav-link btn btn-secondary" (click)=" cargoMF(ultimaBusqueda)">Buscar <i ></i></button>
+                    <button class="nav-link btn btn-secondary" (click)="cargoMF('');borrarFechas(ultimaBusqueda);">Borrar <i ></i></button>
+                </div>
+
+            </div>
+
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr class="colorLetraOscura cabezaTabla">
+                    <th class="colorLetraOscura text-left">
+                        <div class="linea">
+                            <div>Nombre</div>
+                            <div class="ordenar">
+                                <p class="iconoOrden" (click)="ordenar('nombre','Ascendente')">&#9652;</p>
+                                <p (click)="ordenar('nombre','Descendente')">&#9662;</p>
+                            </div>
+                        </div>
+                    </th>
+                    <th class="text-left">
+                        <div class="linea">
+                            <div>Catálogo</div>
+                            <div class="ordenar">
+                                <p class="iconoOrden" (click)="ordenar('nombre_catalogo','Ascendente')">&#9652;</p>
+                                <p (click)="ordenar('nombre_catalogo','Descendente')">&#9662;</p>
+                            </div>
+                        </div>
+                    </th>
+                    <th class="text-left">Descripción</th>
+                    <th class="text-left">Medidas (cm)</th>
+                    <th class="text-left">Tags</th>
+                    <th class="text-left">
+                        <div class="linea">
+                            <div>Archivo</div>
+                            <div class="ordenar">
+                                <p class="iconoOrden" (click)="ordenar('archivo','Ascendente')">&#9652;</p>
+                                <p (click)="ordenar('archivo','Descendente')">&#9662;</p>
+                            </div>
+                        </div>
+                    </th>
+                    <th class="text-left">Colores</th>
+                    <th class="text-left">
+                        <div class="linea">
+                            <div>Fecha Modificación</div>
+                            <div class="ordenar">
+                                <p class="iconoOrden" (click)="ordenar('fecha','Ascendente')">&#9652;</p>
+                                <p (click)="ordenar('fecha','Descendente')">&#9662;</p>
+                            </div>
+                        </div>
+                    </th>
+                    <th class="text-left">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="colorLetraOscura" *ngFor="let modelo of listaRegistros">
+                    <td>{{modelo.nombre}}</td>
+                    <td>{{modelo.nombre_catalogo}}</td>
+                    <td>{{modelo.descripcion}}</td>
+                    <td>{{modelo.medida_alto}}x{{modelo.medida_ancho}}x{{modelo.medida_largo}}</td>
+                    <td>{{modelo.tags}}</td>
+                    <td>{{modelo.archivo}}</td>
+                    <td>{{modelo.colores}}</td>
+                    <td>{{modelo.fecha | date : 'dd/MM/yyyy '}}</td>
+                    <td>
+                        <button (click)="edit(modelo.uid)" type="button" rel="tooltip" class="btn btn-info btn-sm btn-round btn-icon">
+                            <i class="tim-icons icon-pencil"></i>
+                        </button>
+                        <button (click)="eliminarModelo(modelo.uid, modelo.nombre)" type="button" rel="tooltip" class="btn btn-danger btn-sm btn-round btn-icon">
+                                <i class="tim-icons icon-trash-simple"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div #modulo class="modal" style="display:none" aria-hidden="true" aria-labelledby="myModalLabel" bsModal #myModal="bs-modal" role="dialog" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header justify-content-center">
+                        <button aria-hidden="true" class="close" data-dismiss="modal" type="button" (click)="offModal1()">
+                    <i class="tim-icons icon-simple-remove"> </i>
+                  </button>
+                        <h4 #titulo class="title title-up">Nuevo modelo</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form autocomplete="off" [formGroup]="modeloForm">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="nombre">Nombre</label>
+                                    <input type="text" formControlName="nombre" class="form-control input-group" id="nombre" placeholder="Nombre">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="catalogo">Catalogo</label>
+                                    <input list="catalogs" formControlName="catalogo" class="form-control input-group" id="catalogo" placeholder="Catálogo">
+                                    <datalist id="catalogs">
+                                        <option *ngFor="let catalogo of catalogos" value="{{catalogo.nombre}}">
+                                    </datalist>
+                                    <!-- <div *ngFor="let catalogo of catalogos">
+                                        {{catalogo.nombre}}
+                                    </div> -->
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="descripcion">Descripción</label>
+                                <textarea rows="4" cols="50" formControlName="descripcion" id="descripcion" placeholder="Descripción">
+                                </textarea>
+                            </div>
+                            <p>Medidas</p>
+                            <div class="form-row">
+                                <div class="form-group col-md-3">
+                                    <label for="ancho">Alto</label>
+                                    <input type="number" formControlName="medida_alto" class="form-control input-group">
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="ancho">Ancho</label>
+                                    <input type="number" formControlName="medida_ancho" class="form-control input-group">
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="largo">largo</label>
+                                    <input type="number" formControlName="medida_largo" class="form-control input-group">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="tags">Tags</label>
+                                <div id="campoTags" #campoTags>
+                                </div>
+                                <input type="text" #nombreTag formControlName="tags" class="form-control input-group" placeholder="#tag">
+                                <button type="button" class="btn btn-primary btn-sm" (click)="addTag()" #add>Añadir</button>
+                            </div>
+                            <div class="form-group">
+                                <label for="archivo">Archivo</label>
+                                <input type="text" formControlName="archivo" class="form-control input-group">
+                            </div>
+                            <div class="form-group">
+                                <label for="colores">Colores</label>
+                                <div id="campoColores" #campoColores>
+                                </div>
+                                <input type="color" #color class="form-control input-group">
+                                <input type="text" #nombreColor formControlName="colores" class="form-control input-group">
+                                <button type="button" class="btn btn-primary btn-sm" (click)="addColor()">Añadir</button>
+                            </div>
+                            <div class="col">
+                                <p class="mensajeError" *ngIf="!campoValido('nombre')">El campo nombre es obligatorio</p>
+                                <p class="mensajeError" *ngIf="!campoValido('medida_ancho')">El campo medida_ancho es obligatorio</p>
+                                <p class="mensajeError" *ngIf="!campoValido('medida_alto')">El campo medida_alto es obligatorio</p>
+                                <p class="mensajeError" *ngIf="!campoValido('medida_largo')">El campo medida_largo es obligatorio</p>
+                                <p class="mensajeError" *ngIf="!campoValido('descripcion')">El campo descripción es obligatorio </p>
+                                <p class="mensajeError" *ngIf="!campoValido('tags')">El campo tags es obligatorio</p>
+                                <p class="mensajeError" *ngIf="!campoValido('catalogo')">El campo catalogo es obligatorio </p>
+                                <p class="mensajeError" *ngIf="!campoValido('archivo')">No hay ningún archivo </p>
+                            </div>
+                            <button #botonCrear class="btn btn-primary m-r-20" (click)="onSubmit('Crear');" type="submit">Crear</button>
+                            <button #botonAceptar class="btn btn-info m-r-10" type="button" (click)="onSubmit('Editar');" style="display: none; ">Aceptar</button>
+                            <button #botonCancelar class="btn btn-danger" type="button" (click)="offModal1() ">Cancelar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Paginacion -->
+        <div class=" mt-2 mr-2 float-right ">
+            <app-pagination (cambiarPagina)="cambiarPagina( $event ) " [texto]="true " [totalRegistros]="totalregistros" [registroActual]="registroactual+1 " [registrosPorPagina]="registrosporpagina"></app-pagination>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,250 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="100" id="navbar-top">
+    <div class="container">
+        <div class="navbar-translate">
+            <a class="navbar-brand" [routerLink]="['/landing']" placement="bottom">
+                <span id="logotipo"><img id="isotipo" alt="mobbler-logo" src="assets/img/iconomobbler.png" class="img-fluid"> <p id="logo">Mobbler</p></span>
+            </a>
+            <button aria-controls="navigation-index" aria-label="Toggle navigation" class="botonPlan btn btn-danger mr-1 navbar-toggler" [attr.aria-expanded]="!isCollapsed" (click)="isCollapsed = !isCollapsed" id="navigation" type="button">
+                <a class="nav-link" [routerLink]="['/login']"> Iniciar sesión </a>
+            </button>
+        </div>
+        <div class="navbar-collapse justify-content-end" [collapse]="isCollapsed" id="navigation">
+            <div class="navbar-collapse-header">
+                <div class="row">
+                    <div class="col-6 collapse-close text-right">
+                        <button aria-controls="navigation-index" aria-label="Toggle navigation" class="navbar-toggler" [attr.aria-expanded]="!isCollapsed" (click)="isCollapsed = !isCollapsed" id="navigation" type="button">
+                      <i class="tim-icons icon-simple-remove"> </i>
+                    </button>
+                    </div>
+                </div>
+            </div>
+            <ul class="navbar-nav">
+                <li style="display:flex" class="nav-item">
+                    <!-- <button style="padding: 10px;" class="nav-link" [routerLink]="['/home']" class="botonPlan btn mr-1">
+                        Pruébame
+                    </button> -->
+                    <button style="padding: 10px;" class="nav-link" [routerLink]="['/login']" class="botonPlan btn btn-danger mr-1">
+                        Iniciar sesión
+                    </button>
+                    <!-- <button *ngIf="logueado" style="padding: 10px;" class="nav-link" [routerLink]="['/gestor-proyectos']" class="botonPlan btn btn-danger mr-1">
+                        Ir a Proyectos
+                    </button>
+                    <button *ngIf="logueado" style="padding: 10px;" class="nav-link" (click)="logout()" class="botonPlan btn btn-danger mr-1">
+                        Cerrar sesión
+                    </button> -->
+                    <button style="padding: 10px;" class="nav-link" [routerLink]="['/register']" class="botonPlan btn btn-danger mr-1">
+                        Registrarse
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- <app-navbar *ngIf="logueado"></app-navbar> -->
+<div class="wrapper">
+    <div class="page-header">
+        <!--Meter imagenes en el fondo, cambiar pos-->
+        <img class="path" src="assets/img/blob.png" />
+
+        <img class="path2" src="assets/img/path2.png" />
+
+        <!-- Sección inicio -->
+        <div class="content-center">
+            <div class="row row-grid justify-content-between align-items-center">
+                <div class="col-lg-6 col-md-6">
+                    <img alt="habitacion 3d" class="img-fluid" src="assets/img/habitacion.png" />
+                </div>
+                <div style="padding-left:120px; text-align: justify;" class="col-lg-6 col-md-5">
+                    <h1 class="text-white">
+                        Crea, Diseña, Visualiza
+                    </h1>
+                    <p class="text-white mb-3">
+                        Con la implementación de las tecnologías 3D, Mobbler permite que tus clientes visualicen de forma realista las ideas que tienen en mente. En unos sencillos pasos, podrás construir un modelado
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección catálogo -->
+    <section class="section section-lg">
+        <section style="padding:50px;" class="fondo section">
+            <img class="path" src="assets/img/path4.png" />
+            <div style="display: flex; flex-direction:column;" class="container">
+                <div class="justify-content-center align-items-center row">
+                    <div class="col-lg-5 col-md-4">
+                        <img id="tikamoon" src="assets/img/tikamoon.png" />
+                        <img id="circulos" src="assets/img/circulos.png" />
+                    </div>
+                    <div class="col-lg-5 col-md-4">
+                        <img id="catalogo" src="assets/img/catalogo.png" />
+                    </div>
+                </div>
+                <h4 class="colorLetraOscura" id="eslogan_catalogo">
+                    Trabaja con tus proveedores favoritos y forma amplios catálogos.
+                </h4>
+
+            </div>
+        </section>
+    </section>
+
+    <!-- Sección comentarios -->
+    <section class="section section-lg">
+        <img class="path" src="assets/img/path4.png" />
+
+        <img class="path2" src="assets/img/path5.png" />
+
+        <img class="path3" src="assets/img/path2.png" />
+
+        <div class="container">
+            <div class="row row-grid align-items-center text-left" sytle="margin-left: 100px">
+                <div class="col-lg-8 col-md-6">
+                    <img alt="sección comentarios" id="seccion_comentarios" class="img-fluid" src="assets/img/comentarios.png" />
+                </div>
+                <div class="col-lg-4 col-md-5">
+                    <p class="text-white mb-3">
+                        Mantente comunicado con tu cliente a través de la sección de comentarios
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección descripción -->
+    <section style="padding: 50px" id="descripcion" class="section section-lg">
+        <img class="path" src="assets/img/path5.png" />
+
+        <div class="columnaContenido container">
+            <div style="text-align:center;" class="row row-grid align-items-center justify-content-between">
+                <div class="col-md-3">
+                    <img class="iconosDescripcion" alt="online" src="assets/img/online.png" />
+                    <h3 class="colorLetraOscura h3Personalizado">Online</h3>
+                    <p class="contenidoDescripcion colorLetraOscura mb-3">
+                        Tus clientes podrán olvidarse de venir hasta la tienda para realizar cualquier cambio
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <img class="iconosDescripcion" alt="3d" src="assets/img/3d.png" />
+                    <h3 class="colorLetraOscura h3Personalizado">Entorno 3D</h3>
+                    <p class="contenidoDescripcion colorLetraOscura mb-3">
+                        Crea y visualiza de una forma realista el diseño ideal para ti
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <img class="iconosDescripcion" alt="3d" src="assets/img/presupuesto.png" />
+                    <h3 class="colorLetraOscura h3Personalizado">Presupuesto</h3>
+                    <p class="contenidoDescripcion colorLetraOscura mb-3">
+                        Obtén un presupuesto real del conjunto mobiliario. Mantén bajo control tu objetivo monetario.
+                    </p>
+                </div>
+            </div>
+            <div style="margin-top: 20px" class="col-md-5">
+                <h3 class="h3Personalizado colorLetraOscura">
+                    Descubre más sobre nosotros
+                </h3>
+                <button class="btn btn-danger mr-1">
+                    Ver más
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección planes -->
+    <section class="fondo section section-lg">
+        <div class="container reja">
+            <div class="col" style="text-align:center;">
+                <img alt="marco" src="assets/img/marco.png" />
+                <div>
+                    <h3 class="h3Plan1">Gratuito</h3>
+                    <p class="colorLetraOscura mb-3">
+                        Para que disfrutes la experiencia
+                    </p>
+                    <div class="contenidoPlan">
+                        <div class="rejPlan">
+                            <img alt="checked" class="checked" src="assets/img/checked.png" />
+                            <h4 class="textChecked h4Personalizado colorLetraOscura">2 proyectos</h4>
+                        </div>
+                        <div class="rejPlan">
+                            <img alt="checked" class="checked" src="assets/img/checked.png" />
+                            <h4 class="textChecked h4Personalizado colorLetraOscura">1 catálogo</h4>
+                        </div>
+                    </div>
+                    <button class="botonPlan btn btn-danger mr-1">
+                            Comenzar
+                    </button>
+                </div>
+            </div>
+            <div class="col" style="text-align:center;">
+                <img alt="marco" src="assets/img/marco.png" />
+                <div style="margin-top: 90px;">
+                    <h3 class="h3Plan">Básico</h3>
+                    <p class="descripcionPlan colorLetraOscura mb-3">
+                        Todo lo que necesitas para empezar de una forma sencilla a diseñar
+                    </p>
+                    <div class="contenidoPlan2">
+                        <div class="rejPlan">
+                            <img alt="checked" class="checked" src="assets/img/checked.png" />
+                            <h4 class="textChecked h4Personalizado colorLetraOscura">30 proyectos</h4>
+                        </div>
+                        <div class="rejPlan">
+                            <img alt="checked" class="checked" src="assets/img/checked.png" />
+                            <h4 class="textChecked h4Personalizado colorLetraOscura">8 catálogos</h4>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <h4 class="h3bPlan colorLetraOscura">Mensual</h4>
+                            <h1 class="h3bPlan h1Plan colorLetraOscura">11,99 €</h1>
+                        </div>
+                        <div>
+                            <h4 class="h3bPlan colorLetraOscura">Anual</h4>
+                            <h1 class="h3bPlan h1Plan colorLetraOscura">119,99 €</h1>
+                        </div>
+                        <p class="colorLetraOscura">
+                            2 meses gratis
+                        </p>
+                    </div>
+                    <button class="botonPlan btn btn-danger mr-1">
+                        Comenzar
+                    </button>
+                </div>
+            </div>
+            <div class="col" style="text-align:center;">
+                <img alt="marco" src="assets/img/marco.png" />
+                <div style="margin-top: 90px;">
+                    <h3 class="h3Plan">Premium</h3>
+                    <p class="descripcionPlan colorLetraOscura mb-3">
+                        Elementos adicionales para mejorar tus proyectos con total libertad
+                    </p>
+                    <div class="contenidoPlan2">
+                        <div class="rejPlan">
+                            <img alt="checked" class="checked" src="assets/img/checked.png" />
+                            <h4 class="textChecked h4Personalizado colorLetraOscura">Proyectos ilimitados</h4>
+                        </div>
+                        <div class="rejPlan">
+                            <img alt="checked" class="checked" src="assets/img/checked.png" />
+                            <h4 class="textChecked h4Personalizado colorLetraOscura">30 catálogos</h4>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <h4 class="h3bPlan colorLetraOscura">Mensual</h4>
+                            <h1 class="h3bPlan h1Plan colorLetraOscura">30,00 €</h1>
+                        </div>
+                        <div>
+                            <h4 class="h3bPlan colorLetraOscura">Anual</h4>
+                            <h1 class="h3bPlan h1Plan colorLetraOscura">265,00 €</h1>
+                        </div>
+                        <p class="colorLetraOscura">
+                            3 meses gratis
+                        </p>
+                    </div>
+                    <button class="botonPlan btn btn-danger mr-1">
+                        Comenzar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <app-footer></app-footer>
+</div>

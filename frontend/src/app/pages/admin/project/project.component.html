@@ -1,0 +1,244 @@
+<div id="contenedor">
+    <app-sidebar></app-sidebar>
+    <section class="tabla">
+        <div class="row">
+            <div class="col">
+                <h1 class="font">Proyectos</h1>
+            </div>
+            <div class="col">
+                <div class="float-right">
+                    <button class="nav-link btn btn-primary" (click)="onModal1()">Nuevo <i class="fa fa-plus m-l-10"></i></button>
+                </div>
+            </div>
+            <hr class="separador">
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="input-group">
+                    <input #txtBuscar type="text" class="form-control " (keyup)="cargarProyectos(txtBuscar.value)" id="fname" placeholder="Buscar">
+                    <div class="input-group-append">
+                        <span class="input-group-text micursor" (click)="txtBuscar.value =''; cargarProyectos(txtBuscar.value)"><i class="fa fa-times-circle"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="linea col-sm-6">
+                <form id="formulario" method="post">
+                    <p class="colorLetraOscura">Inicio: </p>
+                    <div class="col-lg-6 col-md-6">
+                        <input #fechaIni value="{{inicio}}" type="date">
+                    </div>
+                    <p class="colorLetraOscura">Fin: </p>
+                    <div class="col-lg-6 col-md-6">
+                        <input #fechaFin value="{{fin}}" type="date">
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-2">
+                <div class="linea">
+                    <button class="nav-link btn btn-secondary" (click)=" cargoPrF(ultimaBusqueda)">Buscar</button>
+                    <button class="nav-link btn btn-secondary" (click)=" cargoPrF('');borrarFechas(ultimaBusqueda)">Borrar</button>
+                </div>
+            </div>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr class="colorLetraOscura cabezaTabla">
+                    <th class="text-left">
+                        <div class="linea">
+                            <div>Título</div>
+                            <div class="ordenar">
+                                <p class="iconoOrden" (click)="ordenar('titulo','Ascendente')">&#9652;</p>
+                                <p (click)="ordenar('titulo','Descendente')">&#9662;</p>
+                            </div>
+                        </div>
+                    </th>
+                    <th class="text-left">Descripción</th>
+                    <th class="text-left">Anotaciones</th>
+                    <th class="text-left">
+                        <div class="linea">
+                            <div>Creador</div>
+                            <div class="ordenar">
+                                <p class="iconoOrden" (click)="ordenar('creador','Ascendente')">&#9652;</p>
+                                <p (click)="ordenar('creador','Descendente')">&#9662;</p>
+                            </div>
+                        </div>
+                    </th>
+                    <th class="text-left">
+                        <div class="linea">
+                            <div>Clientes</div>
+                            <div class="ordenar">
+                                <p class="iconoOrden" (click)="ordenar('clientes','Ascendente')">&#9652;</p>
+                                <p (click)="ordenar('clientes','Descendente')">&#9662;</p>
+                            </div>
+                        </div>
+                    </th>
+                    <th class="text-left">
+                        <div class="linea">
+                            <div>Muebles</div>
+                            <div class="ordenar">
+                                <p class="iconoOrden" (click)="ordenar('n_modelos','Ascendente')">&#9652;</p>
+                                <p (click)="ordenar('n_modelos','Descendente')">&#9662;</p>
+                            </div>
+                        </div>
+                    </th>
+                    <th class="text-left">
+                        <div class="linea">
+                            <div>Fecha Creación</div>
+                            <div class="ordenar">
+                                <p class="iconoOrden" (click)="ordenar('fechaC','Ascendente')">&#9652;</p>
+                                <p (click)="ordenar('fechaC','Descendente')">&#9662;</p>
+                            </div>
+                        </div>
+                    </th>
+                    <th class="text-left">
+                        <div class="linea">
+                            <div>Fecha Modificación</div>
+                            <div class="ordenar">
+                                <p class="iconoOrden" (click)="ordenar('fecha','Ascendente')">&#9652;</p>
+                                <p (click)="ordenar('fecha','Descendente')">&#9662;</p>
+                            </div>
+                        </div>
+                    </th>
+                    <th class="text-left">
+                        <div class="linea">
+                            <div>Acciones</div>
+                            <div class="ordenar">
+                                <p class="iconoOrden" (click)="ordenar('fecha','Ascendente')">&#9652;</p>
+                                <p (click)="ordenar('fecha','Descendente')">&#9662;</p>
+                            </div>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="colorLetraOscura" *ngFor="let pro of listaProyectos">
+                    <td>{{pro.titulo}}</td>
+                    <td>{{pro.descripcion}}</td>
+                    <td>{{pro.notas}}</td>
+                    <td>{{pro.nombre_creador}}</td>
+                    <td>{{pro.clientes}}</td>
+                    <td>{{pro.n_muebles}}</td>
+                    <td>{{pro.fechaC | date : 'dd/MM/yyyy '}}</td>
+                    <td>{{pro.fecha | date : 'dd/MM/yyyy '}}</td>
+                    <td>
+                        <button type="button" rel="tooltip" class="btn btn-info btn-sm btn-round btn-icon" (click)="onModal2(pro.uid)">
+                            <i class="tim-icons icon-pencil"></i>
+                        </button>
+                        <button type="button" rel="tooltip" (click)="eliminarProyecto(pro.uid, pro.titulo)" class="btn btn-danger btn-sm btn-round btn-icon">
+                            <i class="tim-icons icon-trash-simple"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- MODAL -->
+
+        <div #modulo class="modal" style="display:none" aria-hidden="true" aria-labelledby="myModalLabel" bsModal #myModal="bs-modal" role="dialog" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header justify-content-center">
+                        <button aria-hidden="true" class="close" data-dismiss="modal" type="button" (click)="offModal1()">
+                    <i class="tim-icons icon-simple-remove"> </i>
+                  </button>
+                        <h4 #titulo class="title title-up">Nuevo Proyecto</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal m-t-20" [formGroup]="datosForm">
+                            <div class="row m-t-10">
+                                <div class="col-lg-3 col-md-12 text-lg-right">
+                                    <span class="">Título</span>
+                                </div>
+                                <div class="col-lg-8 col-md-12">
+                                    <input type="text" class="input-group" formControlName="titulo" [ngClass]="{'is-invalid' : campoNoValido('titulo')}" id="titulo">
+                                    <div class="invalid-feedback">
+                                        El campo es obligatorio
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row m-t-10">
+                                <div class="col-lg-3 col-md-12 text-lg-right">
+                                    <span class="">Descripción</span>
+                                </div>
+                                <div class="col-lg-8 col-md-12">
+                                    <input type="text" class="input-group" formControlName="descripcion" [ngClass]="{'is-invalid' : campoNoValido('descripcion')}" id="descripcion">
+                                    <div class="invalid-feedback">
+                                        El campo es obligatorio
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" row m-t-10 ">
+                                <div class="col-lg-3 col-md-12 text-lg-right ">
+                                    <span class=" ">Anotaciones</span>
+                                </div>
+                                <div class="col-lg-8 col-md-12 ">
+                                    <!-- <input type="text" class="input-group" formControlName="notas" [ngClass]="{ 'is-invalid' : campoNoValido( 'notas')} " id="notas"> -->
+                                    <textarea class="input-group" style="resize:none;" formControlName="notas" [ngClass]="{ 'is-invalid' : campoNoValido('notas')} " id="notas" rows="3"></textarea>
+                                    <div class="invalid-feedback ">
+                                        El campo es obligatorio
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row m-t-10">
+                                <div class="col-lg-3 col-md-12 text-lg-right">
+                                    <span class="">Creador</span>
+                                </div>
+                                <div class="col-lg-8 col-md-12">
+                                    <input type="text" class="input-group" formControlName="nombre_creador" [ngClass]="{'is-invalid' : campoNoValido('nombre_creador')}" id="nombre_creador">
+                                    <div class="invalid-feedback">
+                                        El campo es obligatorio
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row m-t-10">
+                                <div class="col-lg-3 col-md-12 text-lg-right">
+                                    <span class="">Nombre Clientes</span>
+                                </div>
+                                <div class="col-lg-8 col-md-12">
+                                    <input #nombreCliente type="text" class="input-group" formControlName="clientes" [ngClass]="{'is-invalid' : campoNoValido('clientes')}" id="clientes">
+                                    <div class="invalid-feedback">
+                                        El campo es obligatorio
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-12 text-lg-right">
+                                    <span class="">E-mail Clientes</span>
+                                </div>
+                                <div class="col-lg-8 col-md-12">
+                                    <input #emailCliente type="email" class="input-group" ng-pattern="^[a-z]+[a-z0-9._-]+@[a-z]+\.[a-z.]{2,5}$" required>
+                                </div>
+                                <div style="padding: 8px 28%;">
+                                    <button type="button" class="btn btn-primary btn-sm" (click)="addCliente()" #add>Añadir</button>
+                                </div>
+                                <div id="campoClientes" class="rowEmail" #campoClientes></div>
+                            </div>
+                            <div class="row m-t-10">
+                                <div class="col-lg-3 col-md-12 text-lg-right">
+                                    <span class="">Numero muebles</span>
+                                </div>
+                                <div class="col-lg-8 col-md-12">
+                                    <input type="number" id="n_muebles" min="1" max="999" class="input-group" formControlName="n_muebles" [ngClass]="{'is-invalid' : campoNoValido('n_muebles')}">
+                                    <div class="invalid-feedback">
+                                        El campo es obligatorio
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-center m-t-10 ">
+                                <div class="row align-content-center ">
+                                    <button #botonCrear class="btn btn-primary m-r-20" (click)="onSubmit('Crear');" type="submit">Crear</button>
+                                    <button #botonAceptar class="btn btn-info m-r-10" type="button" (click)="onSubmit('Editar');" style="display: none; ">Aceptar</button>
+                                    <button #botonCancelar class="btn btn-danger" type="button" (click)="offModal1() ">Cancelar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=" mt-2 mr-2 float-right ">
+            <app-pagination (cambiarPagina)="cambiarPagina( $event )" [texto]="true " [totalRegistros]="totalproyectos" [registroActual]="posicionactual+1 " [registrosPorPagina]="registrosporpagina "></app-pagination>
+        </div>
+
+    </section>
+</div>

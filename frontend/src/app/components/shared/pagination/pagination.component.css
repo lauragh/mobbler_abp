@@ -1,0 +1,26 @@
+.page-item>.page-link.active {
+    background: #ffffff;
+    background-image: none !important;
+    background-position: top right;
+    color: #404040;
+}
+
+.page-item>.page-link:hover {
+    background: #ffffff;
+    background-image: none !important;
+    background-position: top right;
+    border: 0.5px solid;
+    border-color: #404040;
+    color: #404040;
+}
+
+.page-item.active>.page-link {
+    background: #ebebeb;
+    background-image: none !important;
+    background-position: top right;
+    color: #404040;
+}
+
+.pagination .page-item .page-link {
+    color: slategrey !important;
+}

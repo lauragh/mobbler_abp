@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Roboto:wght@500&display=swap');
+#sidebar {
+    background: white;
+}
+
+#listado {
+    list-style: none;
+}
+
+.colorLetraOscura {
+    color: white !important;
+    font-size: xx-large;
+    font-weight: 550;
+}
+
+ul>li>a {
+    font-family: 'Jost', sans-serif;
+    color: #bf9d82;
+    font-weight: 500;
+    font-size: larger;
+}
+
+.bg-brown {
+    background-color: #bf9d82;
+}
+
+.elementoLista {
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.admin-css {
+    padding-top: 10px;
+    padding-left: 10px;
+    margin-bottom: 0px;
+}
+
+.icono {
+    width: 10%;
+    align-self: center;
+    margin-left: 24px;
+}
+
+.h5Personalizado {
+    margin-bottom: 0;
+}
+
+.separador {
+    width: 100%;
+}
+
+.tabla {
+    margin: 50px;
+}
+
+.colorLetraOscura {
+    color: #404040;
+}
+
+.navbar-vertical .navbar-nav .nav-link.active:before {
+    content: "";
+    border-left: none;
+}

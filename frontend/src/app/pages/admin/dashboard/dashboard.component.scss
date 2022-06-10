@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@600&family=Roboto:wght@500&display=swap');
+
+#contenedor {
+    display: grid;
+    grid-template-columns: 250px auto;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: #fff;
+}
+
+.separador{
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.font{
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+    color: #bf9d82;
+}
+
+.tabla {
+    margin: 50px;
+}
+
+.colorLetraOscura {
+    color: #404040;
+}
+
+tr>th {
+    font-size: medium;
+}
+
+#paginacion {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.boton {
+    background: none;
+    border: none;
+    font-size: large;
+    color: white;
+}
+
+#formulario {
+    display: flex;
+}
+
+#ordenar {
+    align-self: center;
+}
+
+#busqueda {
+    justify-content: flex-end;
+    display: flex;
+}
+
+#h4Personalizado {
+    margin-bottom: 0;
+}
+
+.modal {
+    display: block;
+}
+
+.modal-footer {
+    margin-right: auto;
+}
+
+.tarjeta {
+    background-color: #c4c4c4;
+    margin: 50px;
+    margin-left: 0;
+    border-radius: 0.2857rem;
+    padding: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.card {
+    background-color: #c4c4c4;
+    margin-bottom: 20px;
+}
+
+.h3Personalizado {
+    margin: 20px;
+}
+
+.botonP {
+    align-self: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.text-success {
+    color: limegreen;
+}
+
+table>tbody>tr>th {
+    color: #404040;
+}
+
+table>thead>tr>th {
+    color: #404040;
+}
+
+table>tbody>tr>td {
+    color: #404040;
+}
+
+.card p {
+    color: #404040;
+}
+
+#h1Personalizado {
+    text-align: center;
+    margin-bottom: 80px;
+}

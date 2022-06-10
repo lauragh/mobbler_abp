@@ -1,0 +1,290 @@
+<div id="contenedor" class="bg-white">
+    <app-sidebar></app-sidebar>
+    <section class="tabla">
+        <div class="row">
+            <div class="col">
+                <h1 class="font">Catálogos</h1>
+            </div>
+            <div class="col">
+                <div class="float-right">
+                    <button class="nav-link btn btn-primary" (click)="onModal1()">Nuevo <i class="fa fa-plus m-l-10"></i></button>
+                </div>
+            </div>
+            <hr class="separador">
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="input-group">
+                    <input #txtBuscar type="text" class="form-control " id="fname" placeholder="Buscar">
+                    <div class="input-group-append">
+                        <span class="input-group-text" (click)="txtBuscar.value =''; cargarCatalogos(txtBuscar.value)"><i class="fa fa-times-circle"></i></span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="linea col-sm-6">
+                <form id="formulario" method="post">
+                    <p class="colorLetraOscura">Inicio: </p>
+                    <div class="col-lg-6 col-md-6">
+                        <input #fechaIni value="{{inicio}}" type="date">
+                    </div>
+                    <p class="colorLetraOscura">Fin: </p>
+                    <div class="col-lg-6 col-md-6">
+                        <input #fechaFin value="{{fin}}" type="date">
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-2">
+                <div class="linea">
+                    <button class="nav-link btn btn-secondary" (click)="cargarCatalogos(txtBuscar.value); cargoCF();">Buscar</button>
+                    <button class="nav-link btn btn-secondary" (click)="cargarCatalogos('');borrarFechas(ultimaBusqueda);">Borrar</button>
+                </div>
+            </div>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr class="cabezaTabla">
+                    <th class="colorLetraOscura text-left">
+                        <div class="linea">
+                            <tr>Nombre</tr>
+                            <div class="ordenar">
+                                <p class="iconoOrden" (click)="ordenar('nombre','Ascendente')">&#9652;</p>
+                                <p class="pabajo" (click)="ordenar('nombre','Descendente')">&#9662;</p>
+                            </div>
+                        </div>
+
+                    </th>
+                    <th class="colorLetraOscura text-left">
+                        <div class="linea">
+                            <tr>Fabricante</tr>
+                            <div class="ordenar">
+                                <p class="iconoOrden" (click)="ordenar('fabricante','Ascendente')">&#9652;</p>
+                                <p (click)="ordenar('fabricante','Descendente')">&#9662;</p>
+                            </div>
+
+                        </div>
+                    </th>
+                    <th class="colorLetraOscura text-left">
+                        <div class="linea">
+                            <tr>Nº Muebles</tr>
+                            <div class="ordenar">
+                                <p class="iconoOrden" (click)="ordenar('num_modelos','Ascendente')">&#9652;</p>
+                                <p (click)="ordenar('num_modelos','Descendente')">&#9662;</p>
+                            </div>
+                        </div>
+
+                    </th>
+                    <th class="colorLetraOscura text-left">
+                        <div class="linea">
+                            <tr>Precio &euro;</tr>
+                            <div class="ordenar">
+                                <p class="iconoOrden" (click)="ordenar('precio','Ascendente')">&#9652;</p>
+                                <p (click)="ordenar('precio','Descendente')">&#9662;</p>
+                            </div>
+                        </div>
+                    </th>
+                    <th class="colorLetraOscura text-left">
+                        <div class="linea">
+                            <tr>Fecha Modificación</tr>
+                            <div class="ordenar">
+                                <p class="iconoOrden" (click)="ordenar('fecha','Ascendente')">&#9652;</p>
+                                <p (click)="ordenar('fecha','Descendente')">&#9662;</p>
+                            </div>
+                        </div>
+                    </th>
+                    <th class="colorLetraOscura text-left">Acciones
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="bg-white">
+                <tr *ngFor="let catalog of listaCatalogos">
+                    <td class="colorLetraOscura">{{catalog.nombre}}</td>
+                    <td class="colorLetraOscura">{{catalog.fabricante}}</td>
+                    <td class="colorLetraOscura">{{catalog.num_modelos}}</td>
+                    <td class="colorLetraOscura">{{catalog.precio}}</td>
+                    <td class="colorLetraOscura">{{catalog.fecha | date : 'dd/MM/yyyy '}}</td>
+                    <td>
+                        <button type="button" rel="tooltip" class="btn btn-info btn-sm btn-round btn-icon" data-target="#myModal" (click)="onModal2(catalog.uid)">
+                            <i class="tim-icons icon-pencil"></i>
+                        </button>
+                        <button type="button" rel="tooltip" class="btn btn-danger btn-sm btn-round btn-icon">
+                                <i class="tim-icons icon-trash-simple" (click)="eliminarCatalogo(catalog.uid, catalog.nombre)"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <!-- MODAL PARA EDITAR O CREAR-->
+
+        <!-- MODAL -->
+
+        <div *ngIf="modal1 == true" aria-hidden="true" aria-labelledby="myModalLabel" bsModal #myModal="bs-modal" role="dialog" tabindex="-1" class="modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header justify-content-center">
+                        <button aria-hidden="true" class="close" data-dismiss="modal" type="button" (click)="offModal1()">
+                    <i class="tim-icons icon-simple-remove"> </i>
+                  </button>
+                        <h4 class="title title-up">Crear Catálogo</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal m-t-20" [formGroup]="catalogForm">
+                            <div class="row m-t-10">
+                                <div class="col-lg-3 col-md-12 text-lg-right">
+                                    <span class="">Nombre</span>
+                                </div>
+                                <div class="col-lg-8 col-md-12">
+                                    <input type="text" class="input-group" formControlName="nombre" [ngClass]="{'is-invalid' : campoNoValido('nombre')}" id="nombre">
+                                    <div class="invalid-feedback">
+                                        El campo es obligatorio
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row m-t-10">
+                                <div class="col-lg-3 col-md-12 text-lg-right">
+                                    <span class="">Numero de modelos</span>
+                                </div>
+                                <div class="col-lg-8 col-md-12">
+                                    <input type="text" class="input-group" formControlName="num_modelos" [ngClass]="{'is-invalid' : campoNoValido('num_modelos')}" id="num_modelos" readonly>
+                                    <div class="invalid-feedback">
+                                        El campo es obligatorio
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" row m-t-10 ">
+                                <div class="col-lg-3 col-md-12 text-lg-right ">
+                                    <span class=" ">Fabricante</span>
+                                </div>
+                                <div class="col-lg-8 col-md-12 ">
+                                    <input type="text" class="input-group" formControlName="fabricante" [ngClass]="{ 'is-invalid' : campoNoValido( 'fabricante')} " id="fabricante ">
+                                    <div class="invalid-feedback ">
+                                        El campo es obligatorio
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row m-t-10">
+                                <div class="col-lg-3 col-md-12 text-lg-right">
+                                    <span class="">Precio</span>
+                                </div>
+                                <div class="col-lg-8 col-md-12">
+                                    <input type="text" class="input-group" formControlName="precio" [ngClass]="{'is-invalid' : campoNoValido('precio')}" id="precio">
+                                    <div class="invalid-feedback">
+                                        El campo es obligatorio
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row m-t-10">
+                                <div class="col-lg-3 col-md-12 text-lg-right">
+                                    <span class="">Imagen</span>
+                                </div>
+                                <div class="col-lg-8 col-md-12">
+                                    <input type="text" class="input-group" formControlName="img" [ngClass]="{'is-invalid' : campoNoValido('img')}" id="img">
+                                    <div class="invalid-feedback">
+                                        El campo es obligatorio
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-center m-t-10 ">
+                                <div class="align-content-center ">
+                                    <button class="btn btn-primary m-r-20 " type="submit" (click)="crearCatalogo(catalogo)" id="enviar" [disabled]="catalogForm.pristine">Crear</button>
+                                    <button class="btn btn-danger " type="button" (click)="offModal1()" id="cancelar">Cancelar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Este es el de modificar-->
+        <div *ngIf="modal2 == true" aria-hidden="true" aria-labelledby="myModalLabel" bsModal #myModal="bs-modal" role="dialog" tabindex="-1" class="modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header justify-content-center">
+                        <button aria-hidden="true" class="close" data-dismiss="modal" type="button" (click)="offModal2()">
+                    <i class="tim-icons icon-simple-remove"> </i>
+                  </button>
+                        <h4 class="title title-up">Modificar Catálogo</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal m-t-20" [formGroup]="catalogForm">
+                            <div class="row m-t-10">
+                                <div class="col-lg-3 col-md-12 text-lg-right">
+                                    <span class="">Nombre</span>
+                                </div>
+                                <div class="col-lg-8 col-md-12">
+                                    <input type="text" class="input-group" formControlName="nombre" [ngClass]="{'is-invalid' : campoNoValido('nombre')}" id="nombre">
+                                    <div class="invalid-feedback">
+                                        El campo es obligatorio
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row m-t-10">
+                                <div class="col-lg-3 col-md-12 text-lg-right">
+                                    <span class="">Numero de modelos</span>
+                                </div>
+                                <div class="col-lg-8 col-md-12">
+                                    <input type="text" class="input-group" formControlName="num_modelos" [ngClass]="{'is-invalid' : campoNoValido('num_modelos')}" id="num_modelos" readonly>
+                                    <div class="invalid-feedback">
+                                        El campo es obligatorio
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" row m-t-10 ">
+                                <div class="col-lg-3 col-md-12 text-lg-right ">
+                                    <span class=" ">Fabricante</span>
+                                </div>
+                                <div class="col-lg-8 col-md-12 ">
+                                    <input type="text" class="input-group" formControlName="fabricante" [ngClass]="{ 'is-invalid' : campoNoValido( 'fabricante')} " id="fabricante ">
+                                    <div class="invalid-feedback ">
+                                        El campo es obligatorio
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row m-t-10">
+                                <div class="col-lg-3 col-md-12 text-lg-right">
+                                    <span class="">Precio</span>
+                                </div>
+                                <div class="col-lg-8 col-md-12">
+                                    <input type="text" class="input-group" formControlName="precio" [ngClass]="{'is-invalid' : campoNoValido('precio')}" id="precio">
+                                    <div class="invalid-feedback">
+                                        El campo es obligatorio
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row m-t-10">
+                                <div class="col-lg-3 col-md-12 text-lg-right">
+                                    <span class="">Imagen</span>
+                                </div>
+                                <div class="col-lg-8 col-md-12">
+                                    <input type="text" class="input-group" formControlName="img" [ngClass]="{'is-invalid' : campoNoValido('img')}" id="img">
+                                    <div class="invalid-feedback">
+                                        El campo es obligatorio
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-center m-t-10 ">
+                                <div class="align-content-center ">
+                                    <button class="btn btn-primary m-r-20 " type="submit" (click)="actualizarCatalogo()" id="enviar" [disabled]="catalogForm.pristine">Modificar</button>
+                                    <button class="btn btn-danger " type="button" (click)="offModal2()" id="cancelar">Cancelar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class=" mt-2 mr-2 float-right ">
+            <app-pagination (cambiarPagina)="cambiarPagina( $event ) " [texto]="true " [totalRegistros]="totalcatalogos" [registroActual]="posicionactual+1 " [registrosPorPagina]="registrosporpagina "></app-pagination>
+        </div>
+
+    </section>
+</div>

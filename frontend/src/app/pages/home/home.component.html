@@ -1,0 +1,352 @@
+<nav role="navigation" class="primary-navigation navbar navbar-expand-lg bg-primary">
+    <div class="container-fluid">
+        <div class="row justify-content-between">
+            <div class="col">
+                <ul class="nav justify-content-start">
+                    <li [routerLink]="['/landing']" class="active">
+                        <img alt="mobbler-logo" src="assets/img/favicon.png" class="img-fluid mobbler-logo" width="150" height="150">
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" width="48" height="48" (click)="gestorProyectos();">
+                            <img data-animation="true" data-container="body" placement="bottom" tooltip="Gestor de proyectos" src="../../../../assets/img/tarjetas.png" alt="">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active">
+                            <img data-animation="true" data-container="body" placement="bottom" tooltip="Catálogo" (click)="seleccionarCatalogo(); offModal2('catalogo')" src="../../../../assets/img/libro-black.png" alt="">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" width="48" height="48">
+                            <img data-animation="true" data-container="body" placement="bottom" tooltip="Presupuesto" (click)=" onModalPresupuesto(); offModal2('presupuesto')" src="../../../../assets/img/listado.png" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- CENTRO -->
+            <div class="col-4 align-content-center">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item active">
+                        <a id="captura" class="nav-link active">
+                            <img data-animation="true" data-container="body" placement="bottom" tooltip="Capturar" (click)="capturarCanvas()" src="../../../../assets/img/camera-icon.png" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- FINAL -->
+            <div class="col">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                        <a (click)="verComentarios(); offModal2('comments')" class="nav-link active">
+                            <img data-animation="true" data-container="body" placement="bottom" tooltip="Comentarios" src="../../../../assets/img/message.png" alt="">
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a (click)="verNotificaciones()" class="nav-link active">
+                            <img data-animation="true" data-container="body" placement="bottom" tooltip="Notificaciones" src="../../../../assets/img/alarm.png" alt="">
+                        </a>
+                    </li>
+                    <!-- <app-notification></app-notification> -->
+                    <div #notification *ngIf="isShown" class="text-left notification-container">
+                        <h4 class="text-center">
+                            Notificaciones
+                            <button class="cerrar cerrar2" (click)="offModal('notification')">x</button>
+                        </h4>
+                        <div *ngFor="let noti of arrayProyecto.notificaciones">
+                            <!-- <input class="checkbox" type="checkbox" id="size_2" value="small" checked /> -->
+                            <div class="flex">
+                                <p class="textoNoti colorLetraOscura">{{noti}}</p>
+                                <i (click)="borrarNoti(noti)" class="material-icons dp48 right">clear</i>
+                            </div>
+                            <!-- <label class="notification-c" for="size_2"> {{noti}}<i class="material-icons dp48 right">clear</i></label> -->
+                        </div>
+                    </div>
+
+                    <!-- <li class="nav-item">
+                        <a class="nav-link active">
+                            <img data-animation="true" data-container="body" placement="bottom" tooltip="Compartir" (click)="compartir();" src="../../../../assets/img/share.png" alt="">
+                        </a>
+                    </li> -->
+
+                    <li class="nav-item">
+                        <a class="nav-link active">
+                            <img data-animation="true" data-container="body" placement="bottom" tooltip="Guardar" (click)="guardarProyecto(); offModal('historico');" src="../../../../assets/img/save.png" alt="">
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active">
+                            <img data-animation="true" data-container="body" placement="bottom" tooltip="Control de versiones" (click)="abrirHistorico(); offModal('guardado');" src="../../../../assets/img/control.png" alt="">
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active">
+                            <img data-animation="true" data-container="body" placement="top" tooltip="Mi cuenta" src="../../../../assets/img/user.png" alt="">
+                        </a>
+                        <!-- DESPLEGABLE PERFIL-->
+                        <ul class="dropdown">
+                            <li><a [routerLink]="['/perfil']" [queryParams]="{pestanya:'perfil', proyecto: uidProyecto}">Perfil</a></li>
+                            <li><a [routerLink]="['/perfil']" [queryParams]="{pestanya:'contraseña', proyecto: uidProyecto}">Cambiar contraseña</a></li>
+                            <li><a [routerLink]="['/perfil']" [queryParams]="{pestanya:'plan', proyecto: uidProyecto}">Cambiar plan</a></li>
+                            <li><a [routerLink]="['/perfil']" [queryParams]="{pestanya:'factura', proyecto: uidProyecto}">Facturas</a></li>
+                            <li><a [routerLink]="['/perfil']" [queryParams]="{pestanya:'estadisticas', proyecto: uidProyecto}">Estadísticas</a></li>
+                            <li><a (click)="logout()">Cerrar sesión</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item active">
+                        <a class="nav-link active">
+                            <img data-animation="true" data-container="body" placement="bottom" tooltip="Controles" (click)="cargarControles();" src="../../../../assets/img/ask-icon.png" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div style="position: relative;">
+    <div class="icon-box">
+        <li class="nav-item active">
+            <a class="nav-link-edited active">
+                <img (click)="mostrarInfoProyecto(); offModal2('info')" src="../../../../assets/img/informacion.png" alt="">
+            </a>
+            <a #mini style="display:none" class="nav-link-edited active">
+                <div (click)="maximizar()" class="catalogoMini">
+                    <p class="colorLetraOscura tituloMini">Catálogo</p>
+                </div>
+            </a>
+        </li>
+    </div>
+    <!-- Div Comentarios -->
+    <div #comments style="display:none; height: 500px; padding: 15px" class="box red col-lg-5 mb-5 mb-lg-0">
+    </div>
+    <!-- Div información del proyecto -->
+    <div #info style="display:none" class="box red col-lg-5 mb-5 mb-lg-0">
+    </div>
+    <!-- Div Catálogo -->
+    <div #cards style="display:none" class="card red catalogo">
+        <div class="row navCatalogo">
+            <img #atras style="display:none" (click)="seleccionarCatalogo(); offModal('infoModelo');" class="cursorPointer flecha lista" src="assets/img/flecha-izquierda-black.png">
+            <!-- <input (change)="buscarCatalogo()" class="lista" list="catalogs" name="catalogs" /> -->
+            <select class="lista" #opcionLista (change)="buscarCatalogo()">
+                <option value="" selected="selected">---</option>
+                <option *ngFor="let catalogo of arrayCatalogosUsuario" value="{{catalogo.uid}}">{{catalogo.nombre}}</option>
+            </select>
+            <!-- <datalist id="catalogs">
+                    <option *ngFor="let catalogo of arrayCatalogosUsuario" attr.data-value="{{catalogo.uid}}" value="{{catalogo.nombre}}"></option>
+                </datalist> -->
+            <h4 class="lista colorLetraOscura">Catálogos</h4>
+            <div class="divIconos">
+                <img (click)="abrirFiltros()" class="iconosBarra" src="assets/img/filtros.png">
+                <img (click)="minimizar('catalogo')" class="iconosBarra" src="assets/img/menos.png">
+                <button class="cerrar" (click)="offModal('catalogo');offModal('infoModelo');offModal('filtros');">x</button>
+            </div>
+        </div>
+        <div #catalogo style="display:none" class="cards row justify-content-around"></div>
+    </div>
+    <div #tarjetaModelo style="display:none" class="card red tarjetaModelo">
+    </div>
+    <!-- Div Filtros -->
+    <form>
+        <div #filtros style="display:none" class="card red filtros">
+            <div class="row arreglo">
+                <h3 style="margin-bottom:0 ">Filtros</h3>
+                <button class="cerrar fc" (click)="offModal('filtros')">x</button>
+            </div>
+            <div class="row arreglo">
+                <select class="selectFiltros" #opcionHab (change)="filtrarHab()">
+                        <option value="todos" selected="selected">Todos</option>
+                        <option value="banyo">Baño</option>
+                        <option value="cocina">Cocina</option>
+                        <option value="dormitorio">Dormitorio</option>
+                        <option value="salon" >Salón</option>
+                    </select>
+                <div>
+                    <div width="200px" class="input-group">
+                        <input #txtBuscar type="text" class="form-control " id="fname" placeholder="Buscar">
+                        <div class="input-group-append">
+                            <span class="input-group-text micursor" (click)="txtBuscar.value ='';"><i class="fa fa-times-circle"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contenidoFiltros">
+                <div #seccionTipoMueble style="display:none">
+                    <div style="display: inline-block; width: 100%">
+                        <h4 style="float: left">Tipo de Mueble</h4>
+                        <img style="float: right" #mas1 (click)="minimizar('tipoMueble')" class="iconosBarra" src="assets/img/mas.png">
+                    </div>
+                    <div #tipoMueble style="display:none" class="columnas">
+                        <div><input type="checkbox" #op id="op1"> <label #lb for="op1"></label></div>
+                        <div><input type="checkbox" #op id="op2"> <label #lb for="op2"></label></div>
+                        <div><input type="checkbox" #op id="op3"> <label #lb for="op3"></label></div>
+                        <div><input type="checkbox" #op id="op4"> <label #lb for="op4"></label></div>
+                        <div><input type="checkbox" #op id="op5"> <label #lb for="op5"></label></div>
+                        <div><input type="checkbox" #op id="op6"> <label #lb for="op5"></label></div>
+                        <div><input type="checkbox" #op id="op7"> <label #lb for="op5"></label></div>
+
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <div style="display: inline-block; width: 100%">
+                        <h4 style="float: left">Formas</h4>
+                        <img style="float: right" #mas2 (click)="minimizar('formas')" class="iconosBarra" src="assets/img/mas.png">
+                    </div>
+                    <div #formas style="display:none" class="columnas">
+                        <div><input type="checkbox" #op id="op8" value="rectangular"> <label for="op1">Rectangular</label></div>
+                        <div><input type="checkbox" #op id="op9" value="cuadrada"> <label for="op1">Cuadrada</label></div>
+                        <div><input type="checkbox" #op id="op10" value="redonda"> <label for="op1">Redonda</label></div>
+                        <div><input type="checkbox" #op id="op11" value="ovalada"> <label for="op1">Ovalada</label></div>
+                        <div><input type="checkbox" #op id="op12" value="original"> <label for="op1">Forma Original</label></div>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <div style="display: inline-block; width: 100%">
+                        <h4 style="float: left">Material</h4>
+                        <img style="float: right" #mas3 (click)="minimizar('material')" class="iconosBarra" src="assets/img/mas.png">
+                    </div>
+                    <div #material style="display:none" class="columnas">
+                        <div><input type="checkbox" #op id="op13" value="madera"> <label for="op1">Madera</label></div>
+                        <div><input type="checkbox" #op id="op14" value="plastico"> <label for="op1">Metal</label></div>
+                        <div><input type="checkbox" #op id="op15" value="cristal"> <label for="op1">Cristal</label></div>
+                        <div><input type="checkbox" #op id="op16" value="cuero"> <label for="op1">Cuero</label></div>
+                        <div><input type="checkbox" #op id="op17" value="poliester"> <label for="op1">Poliéster</label></div>
+                        <div><input type="checkbox" #op id="op18" value="plastico"> <label for="op1">Plástico</label></div>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <div style="display: inline-block; width: 100%">
+                        <h4 style="float: left">Colores</h4>
+                        <img style="float: right" #mas4 (click)="minimizar('colores')" class="iconosBarra" src="assets/img/mas.png">
+                    </div>
+                    <div #colores style="display:none;" class="row justify-content-around">
+                        <div class="tamC" #opColor (click)="elegirColor('rojo',0); " style="background-color: red;"></div>
+                        <div class="tamC" #opColor (click)="elegirColor('purpura',1)" style="background-color: purple;"></div>
+                        <div class="tamC" #opColor (click)="elegirColor('rosa',2)" style="background-color: violet;"></div>
+                        <div class="tamC" #opColor (click)="elegirColor('azulOscuro',3)" style="background-color: blue;"></div>
+                        <div class="tamC" #opColor (click)="elegirColor('azulClaro',4)" style="background-color: lightblue;"></div>
+                        <div class="tamC" #opColor (click)="elegirColor('verde',5)" style="background-color: green;"></div>
+                        <div class="tamC" #opColor (click)="elegirColor('amarillo',6)" style="background-color: yellow;"></div>
+                        <div class="tamC" #opColor (click)="elegirColor('negro',7)" style="background-color: black;"></div>
+                        <div class="tamC" #opColor (click)="elegirColor('gris',8)" style="background-color: grey;"></div>
+                        <div class="tamC" #opColor (click)="elegirColor('blanco',9)" style="background-color: white;"></div>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <div style="display: inline-block; width: 100%">
+                        <h4 style="float: left">Precio</h4>
+                        <img style="float: right" #mas5 (click)="minimizar('precio')" class="iconosBarra" src="assets/img/mas.png">
+                    </div>
+                    <div #precio style="display:none">
+                        <div class="row">
+                            <label style="width:35px">Mín</label>
+                            <input #precioMin style="width:50px" type="number">
+                        </div>
+                        <div class="row">
+                            <label style="width:35px">Max</label>
+                            <input #precioMax style="width:50px" type="number">
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <input type="checkbox" id="op11" value="favoritos">
+                    <label #op class="labelFav" for="op19">Favoritos</label>
+                </div>
+            </div>
+            <div class="row justify-content-center botonesFiltros">
+                <button type="reset" class="nav-link btn btn-secondary" style="margin-right: 30px;" (click)="borrarFiltros()">Borrar</button>
+                <button type="submit" class="nav-link btn btn-secondary" style="margin-right: 30px;" (click)="aplicarFiltros()">Aplicar</button>
+            </div>
+        </div>
+    </form>
+
+    <!-- Div Escena -->
+    <div #presupuesto style="display:none" class="box red1 red col-lg-5 mb-5 mb-lg-0">
+        <h3>Presupuesto</h3>
+        <div id="scroll_modelos">
+            <table class="table">
+                <tbody>
+                    <tr #modelo *ngFor="let modelo of listaModelos;let indice=index" (click)="seleccionobj(indice, modelo.nombre)">
+                        <td class="no-edit text-left ancho1">{{modelo.nombre}}</td>
+                        <td class="no-edit ancho1 ">{{modelo.precio}}€</td>
+                        <!--<td class="no-edit ojo ancho1"><img id={{modelo.uid}} (click)="cambiarOjo(indice) " class="ojo.png" #ojo width="23px" height="20px" src="../../../../assets/img/ojo.png"></td> -->
+                        <td class="no-edit ancho1"><img id={{modelo.uid}} (click)="eliminarModelo(indice)" width="23px" height="20px" src="../../../../assets/img/basura.png"></td>
+
+                    </tr>
+                    <tr>
+                        <td class="colorLetraOscura text-left"><b>Total</b></td>
+                        <td class="no-edit text-right"><b>{{total_string}}€</b></td>
+                        <td class="no-edit"><img width="25px" height="25px" (click)="presupuestoPDF()" src="../../../../assets/img/download_black.png"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <button class="cerrar" (click)="offModal('presupuesto')">x</button>
+    </div>
+
+    <!-- Div guardar proyecto -->
+    <div #seccionGuardar style="display:none" class="guardado red card">
+        <div>
+            <h4>Guardar Proyecto</h4>
+            <button class="cerrar cerrar3" (click)="offModal('guardado')">x</button>
+        </div>
+        <input #tituloEscena placeholder="Título" type="text">
+        <div style="margin: 10px" class="row">
+            <p style="margin-right: 10px" class="colorLetraOscura">Estado del Proyecto</p>
+            <select #estado>
+                <option selected="selected" #opE1></option>
+                <option #opE2></option>
+            </select>
+        </div>
+        <button (click)="guardar(); offModal('guardado')">Guardar</button>
+    </div>
+
+    <!-- DIV controles-->
+    <div #seccionControl style="display:none" class="card red controles">
+        <div>
+            <button style="float: right" class="cerrar" (click)="offModal('controles')">x</button>
+            <img src="../../../../assets/img/ayuda.png" alt="Imagen con los controles de la escena" />
+
+        </div>
+    </div>
+
+    <!-- Div control de versiones de proyecto -->
+    <div #historico style="display:none" class="historico red card align-items-center">
+        <div>
+            <h4>Histórico</h4>
+            <button class="cerrar cerrar3" (click)="offModal('historico')">x</button>
+        </div>
+        <div *ngIf="vacio; else aviso" style="flex-direction: column;" class="flex align-items-center">
+            <img #imagenEscena width="200px" height="120px" src="assets/img/proyectos/render1.jpg">
+            <div id="seccionHistorico">
+                <div id="campoHistorico" class="flex" #escenas *ngFor="let escena of listaEscenas">
+                    <div class="cursorPointer" (mouseover)="cambiarImagenEscena(escena.imagen)" (click)="cargarEscena(escena)">
+                        <div style="float:left">
+                            <p class="colorLetraOscura"><strong>{{escena.titulo}}</strong></p>
+                            <p style="width: 255px" class="colorLetraOscura"><strong>Modificado por:  </strong>{{escena.autor}}</p>
+                        </div>
+                        <p style="float:right; font-size: 12px; color: lightgray;" class="text-right">{{escena.fechaC | date : 'dd/MM/yyyy '}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ng-template id="aviso" #aviso>
+            <p class="colorLetraOscura">Aún no hay versiones</p>
+        </ng-template>
+    </div>
+
+    <!-- Motor -->
+    <div class="canva col-lg-6 scene ">
+        <app-engine></app-engine>
+    </div>
+</div>

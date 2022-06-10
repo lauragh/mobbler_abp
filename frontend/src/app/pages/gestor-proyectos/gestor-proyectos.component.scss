@@ -1,0 +1,247 @@
+.icono {
+    width: 28px;
+    margin: 5px;
+}
+
+.col-sm-3 {
+    margin-left: 2em;
+}
+
+.col-lg-2 {
+    padding-left: 3.5rem;
+}
+
+.col-lg-4 {
+    text-align: center;
+}
+
+.btn-secondary {
+    background: #96c5c1 !important;
+}
+
+div.row {
+    color: white
+}
+
+.btn-secondary:active {
+    background: white !important;
+}
+
+.unico {
+    margin-right: 9.4em;
+}
+
+.linea {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.tarjeta {
+    background-color: white;
+    width: max-content;
+    min-height: 484px;
+    text-align: center;
+    margin: 45px 60px;
+    border-radius: 12px;
+    height: max-content;
+    position: relative;
+    box-shadow: 5px 5px 14px 1px rgba(0, 0, 0, 0.49);
+}
+
+.tarjeta:hover {
+    box-shadow: 0 0 12px black;
+    background-position: -120px;
+    transition: all 0.3s ease;
+    transform: scale(1.0);
+}
+
+.tarjetaMas {
+    background-color: white;
+    width: max-content;
+    text-align: center;
+    margin: 45px 60px;
+    border-radius: 12px;
+    cursor: pointer;
+    height: max-content;
+    position: relative;
+    box-shadow: 5px 5px 14px 1px rgba(0, 0, 0, 0.49);
+}
+
+//-----------------------------
+.card__info {
+    background-color: #fff;
+    border: 12px;
+    //    padding: 16px 24px 24px 24px;
+}
+
+.card__category {
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    font-weight: 600;
+    color: #868686;
+}
+
+.card__title {
+    margin-top: 5px;
+    font-weight: 600;
+    // font-family: 'Roboto Slab', serif;
+}
+
+.card__by {
+    font-size: 12px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+}
+
+.card__author {
+    font-weight: 600;
+    text-decoration: none;
+    color: #AD7D52;
+}
+
+.card:hover .card__img--hover {
+    height: 100%;
+    opacity: 0.3;
+}
+
+.card:hover .card__info {
+    background-color: transparent;
+    position: relative;
+}
+
+.card:hover .card__info-hover {
+    opacity: 1;
+}
+
+//-----------------------------
+.colorLetraOscura {
+    color: #404040 !important;
+}
+
+.letraMas {
+    font-size: 250px;
+    padding-left: 95px;
+    padding-right: 95px;
+}
+
+.navBar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+    background-color: white;
+}
+
+.nav1 {
+    padding: 30px;
+}
+
+.nav2 {
+    margin: 10px;
+}
+
+.separador {
+    font-size: 25px;
+    color: black;
+}
+
+textarea {
+    resize: none;
+}
+
+.etiqueta{
+    font-weight: bolder;
+    cursor: pointer; 
+    padding-top: 25px;
+    color: red;
+}
+
+.campo {
+    font-style: italic;
+    font-weight: 600;
+    font-size: inherit;
+    
+}
+
+.divCliente{
+    margin: 12px;
+}
+
+.rowEmail{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: 4%;
+}
+
+// #campoClientes {
+//     display: flex;
+//     width: auto;
+//     display: block;
+// }
+
+.modal {
+    display: block;
+    top: 146px;
+    position: fixed;
+    left: 0;
+    right: 20px;
+    backdrop-filter: blur(3px);
+}
+
+.cards {
+    align-items: center;
+    margin-top: 150px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    padding: 16px 24px 24px 24px;
+}
+
+.flecha {
+    align-self: center;
+    position: absolute;
+    left: 0;
+    width: 40px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.nav1 {
+    padding: 20;
+}
+
+.opciones {
+    width: max-content;
+    float: right;
+    display: none;
+    position: absolute;
+    background-color: #ededed;
+    left: 329px;
+    top: 34px;
+    border-radius: 4px;
+}
+
+.opcion {
+    padding: 5px 15px 5px 15px;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+.opcion:hover {
+    background-color: rgba(150, 149, 147, 0.2);
+}
+
+.estiloEstado {
+    position: absolute;
+    width: 100%;
+    top: 220px;
+    padding: 5px;
+}
+
+.img-proyecto {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}

@@ -1,0 +1,143 @@
+<div class="navBar">
+    <div class="row justify-content-center">
+        <img (click)="atras();" class="flecha" *ngIf="ruta == true" src="assets/img/flecha-izquierda-black.png">
+        <!-- Nav -->
+        <ul class="nav nav1">
+            <li style="cursor:pointer" class="nav-item">
+                <a class="nav2 colorLetraOscura" (click)="gestorProyectos();"><img class="icono" src="assets/img/proyecto-negro.png">Proyectos</a>
+            </li>
+            <li class="separador nav-item">|</li>
+            <li style="cursor:pointer" class="nav-item">
+                <a class="nav2 colorLetraOscura" (click)="gestorCatalogos();"><img class="icono" src="assets/img/libro-black.png"> Catálogos</a>
+            </li>
+        </ul>
+    </div>
+    <!-- Segundo nav -->
+    <div class="linea">
+        <!-- Ordenar por -->
+        <div style="width:max-content; display:flex; align-items: center;">
+            <div>
+                <select #ordenCampo (change)="ordenar()" name="ordenar">
+                    <option selected="selected">Ordenar por</option>
+                    <option value="tituloA">Titulo Ascendente</option>
+                    <option value="tituloD">Titulo Descendente</option>
+                    <option value="clientesA">Clientes Ascendente</option>
+                    <option value="clientesD">Clientes Descendente</option>
+                    <option value="creadorA">Creador Ascendente</option>
+                    <option value="creadorD">Creador Descendente</option>
+                </select>
+            </div>
+            <!-- Buscador -->
+            <div class="col-sm-8">
+                <div class="input-group">
+                    <input #txtBuscar type="text" class="form-control " (keyup)="cargarProyectos(txtBuscar.value)" id="fname" placeholder="Buscar">
+                    <div class="input-group-append">
+                        <span class="input-group-text micursor" (click)="txtBuscar.value =''; cargarProyectos(txtBuscar.value)"><i class="fa fa-times-circle"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-3">
+            <h4 class="colorLetraOscura">Proyectos {{numProyectos}}/{{numPTotal}}</h4>
+        </div>
+        <div class="col-lg-3 col-md-3">
+            <app-pagination (cambiarPagina)="cambiarPagina( $event ) " [texto]="true " [totalRegistros]="totalproyectos" [registroActual]="posicionactual+1 " [registrosPorPagina]="registrosporpagina "></app-pagination>
+        </div>
+    </div>
+</div>
+
+<!-- Contenido -->
+<!-- añadir tarjeta -->
+<div class="cards row" #cards></div>
+<div #modulo style="display:none" class="modal" aria-hidden="true" aria-labelledby="myModalLabel" bsModal #myModal="bs-modal" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header justify-content-center">
+                <button aria-hidden="true" class="close" data-dismiss="modal" type="button" (click)="offModal1()">
+            <i class="tim-icons icon-simple-remove"> </i>
+            </button>
+                <h4 #titulo class="title title-up">Crear Proyecto</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal m-t-20" [formGroup]="datosForm">
+                    <div class="row m-t-10">
+                        <div class="col-lg-3 col-md-12 text-lg-right">
+                            <span class="colorLetraOscura">Titulo (*)</span>
+                        </div>
+                        <div class="col-lg-8 col-md-12">
+                            <input type="text" class="input-group" formControlName="titulo" [ngClass]="{'is-invalid' : campoNoValido('titulo')}" id="titulo">
+                            <div class="invalid-feedback">
+                                El campo es obligatorio
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-t-10">
+                        <div class="col-lg-3 col-md-12 text-lg-right">
+                            <span class="colorLetraOscura">Descripción (*)</span>
+                        </div>
+                        <div class="col-lg-8 col-md-12">
+                            <textarea rows="4" cols="38" formControlName="descripcion" placeholder="Descripción" [ngClass]="{'is-invalid' : campoNoValido('descripcion')}">
+                            </textarea>
+                            <div class="invalid-feedback">
+                                El campo es obligatorio
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" row m-t-10 ">
+                        <div class="col-lg-3 col-md-12 text-lg-right ">
+                            <span class="colorLetraOscura">Anotaciones</span>
+                        </div>
+                        <div class="col-lg-8 col-md-12 ">
+                            <textarea rows="4" cols="38" formControlName="notas" placeholder="Anotaciones" [ngClass]="{'is-invalid' : campoNoValido('notas')}">
+                            </textarea>
+                            <div class="invalid-feedback ">
+                                El campo es obligatorio
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row m-t-10">
+                        <div class="col-lg-3 col-md-12 text-lg-right">
+                            <span class="colorLetraOscura">Nombre Clientes</span>
+                        </div>
+                        <div class="col-lg-8 col-md-12">
+                            <input #nombreCliente type="text" class="input-group" formControlName="clientes" [ngClass]="{'is-invalid' : campoNoValido('clientes')}" id="clientes">
+                            <div class="invalid-feedback">
+                                El campo es obligatorio
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-12 text-lg-right">
+                            <span class="colorLetraOscura">E-mail Clientes</span>
+                        </div>
+                        <div class="col-lg-8 col-md-12">
+                            <input #emailCliente type="email" class="input-group" ng-pattern="^[a-z]+[a-z0-9._-]+@[a-z]+\.[a-z.]{2,5}$" required>
+                        </div>
+                        <div style="padding: 8px 28%;">
+                            <button type="button" class="btn btn-primary btn-sm" (click)="addCliente()" #add>Añadir</button>
+                        </div>
+                        <div id="campoClientes" class="rowEmail" #campoClientes></div>
+                    </div>
+                    <div class="row m-t-10">
+                        <div class="col-lg-3 col-md-12 text-lg-right">
+                            <span class="colorLetraOscura">Creador (*)</span>
+                        </div>
+                        <div class="col-lg-8 col-md-12">
+                            <input type="text" class="input-group" formControlName="nombre_creador" [ngClass]="{'is-invalid' : campoNoValido('nombre_creador')}" id="nombre_creador">
+                            <div class="invalid-feedback">
+                                El campo es obligatorio
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center m-t-10 ">
+                        <!-- <div class="linea "> -->
+                        <button #botonCrear class="nav-link btn btn-secondary" (click)="onSubmit('Crear'); mandoEmail();" type="submit">Crear</button>
+                        <button #botonAceptar class="nav-link btn btn-secondary" type="button" (click)="onSubmit('Editar');" style="display: none; ">Aceptar</button>
+                        <button style="margin-left: 40px;" #botonCancelar class="nav-link btn " type="button" (click)="offModal1() ">Cancelar</button>
+                        <!-- </div> -->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

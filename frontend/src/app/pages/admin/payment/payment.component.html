@@ -1,0 +1,225 @@
+<div id="contenedor">
+    <app-sidebar></app-sidebar>
+    <section class="tabla">
+        <div class="row">
+            <div class="col">
+                <h1 class="font">Pagos y Facturas</h1>
+            </div>
+            <!-- <div class="col">
+                <div class="float-right">
+                    <button class="nav-link btn btn-primary" (click)="onModal1()">Nuevo <i class="fa fa-plus m-l-10"></i></button>
+                </div>
+            </div> -->
+            <hr class="separador">
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="input-group">
+                    <input #txtBuscar type="text" class="form-control" id="fname" placeholder="Buscar">
+                    <div class="input-group-append">
+                        <span class="input-group-text micursor" (click)="txtBuscar.value =''; cargarPagos(txtBuscar.value)"><i class="fa fa-times-circle"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="linea col-sm-6">
+                <form id="formulario" method="post">
+                    <p class="colorLetraOscura">Inicio: </p>
+                    <div class="col-lg-6 col-md-6">
+                        <input #fechaIni value="{{inicio}}" type="date">
+                    </div>
+                    <p class="colorLetraOscura">Fin: </p>
+                    <div class="col-lg-6 col-md-6">
+                        <input #fechaFin value="{{fin}}" type="date">
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-2">
+                <div class="linea">
+                    <button class="nav-link btn btn-secondary" (click)=" cargarPagos(txtBuscar.value);cargoPF()">Buscar</button>
+                    <button class="nav-link btn btn-secondary" (click)="cargoPF();borrarFechas(ultimaBusqueda)">Borrar</button>
+                </div>
+            </div>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr class="colorLetraOscura cabezaTabla">
+                    <th class="text-left">
+                        <div class="linea">
+                            <div>Compañía</div>
+                            <div class="ordenar">
+                                <p class="iconoOrden" (click)="ordenar('companyia','Ascendente')">&#9652;</p>
+                                <p (click)="ordenar('companyia','Descendente')">&#9662;</p>
+                            </div>
+                        </div>
+                    </th>
+                    <th class="text-left">
+                        <div class="linea">
+                            <div>Plan</div>
+                            <div class="ordenar">
+                                <p class="iconoOrden" (click)="ordenar('plan','Ascendente')">&#9652;</p>
+                                <p (click)="ordenar('plan','Descendente')">&#9662;</p>
+                            </div>
+                        </div>
+                    </th>
+                    <th class="text-left">Periodo</th>
+                    <th class="text-left">
+                        <div class="linea">
+                            <div>Precio</div>
+                            <div class="ordenar">
+                                <p class="iconoOrden" (click)="ordenar('precio','Ascendente')">&#9652;</p>
+                                <p (click)="ordenar('precio','Descendente')">&#9662;</p>
+                            </div>
+                        </div>
+                    </th>
+                    <th class="text-left">
+                        <div class="linea">
+                            <div>Fecha Creación</div>
+                            <div class="ordenar">
+                                <p class="iconoOrden" (click)="ordenar('fechaC','Ascendente')">&#9652;</p>
+                                <p (click)="ordenar('fechaC','Descendente')">&#9662;</p>
+                            </div>
+                        </div>
+                    </th>
+                    <th class="text-left">
+                        <div class="linea">
+                            <div>Fecha Modificación</div>
+                            <div class="ordenar">
+                                <p class="iconoOrden" (click)="ordenar('fecha','Ascendente')">&#9652;</p>
+                                <p (click)="ordenar('fecha','Descendente')">&#9662;</p>
+                            </div>
+                        </div>
+                    </th>
+                    <th class="text-left">
+                        <div class="linea">
+                            <div>Acciones</div>
+                            <div class="ordenar">
+                                <p class="iconoOrden" (click)="ordenar('fecha','Ascendente')">&#9652;</p>
+                                <p (click)="ordenar('fecha','Descendente')">&#9662;</p>
+                            </div>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="colorLetraOscura" *ngFor="let pago of pagos">
+                    <td>{{pago.nombre_companyia}}</td>
+                    <td>{{pago.plan}}</td>
+                    <td>{{pago.periodoIni | date : 'dd/MM/yyyy '}} - {{pago.periodoFin | date : 'dd/MM/yyyy '}}</td>
+                    <td>{{pago.precio}} &euro;</td>
+                    <td>{{pago.fechaC | date : 'dd/MM/yyyy '}}</td>
+                    <td>{{pago.fecha | date : 'dd/MM/yyyy '}}</td>
+                    <td>
+                        <button (click)="edit(pago.uid)" type="button" rel="tooltip" class="btn btn-info btn-sm btn-round btn-icon">
+                            <i class="tim-icons icon-pencil"></i>
+                        </button>
+                        <button (click)="descargar(pago.uid)" type="button" rel="tooltip" class="btn btn-info btn-sm btn-round btn-icon">
+                             <i class="tim-icons icon-cloud-download-93"></i> 
+                            <!-- <img   src="assets/img/download.png" /> -->
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div *ngIf="switchModal3 == true" class="modal" aria-hidden="true" aria-labelledby="myModalLabel" bsModal #myModal="bs-modal" role="dialog" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header justify-content-center">
+                        <button aria-hidden="true" class="close" data-dismiss="modal" type="button" (click)="offModal3()">
+                            <i class="tim-icons icon-simple-remove"> </i>
+                        </button>
+                        <h4 #titulo class="title title-up">Editar Pago</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form autocomplete="off" [formGroup]="pagoForm">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="nombre_companyia">Compañía</label>
+                                    <input type="text" formControlName="nombre_companyia" class="input-group">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="plan">Plan</label>
+                                    <input type="text" formControlName="plan" class="input-group">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="periodoIni">Periodo de inicio</label>
+                                <input class="input-group" formControlName="periodoIni" type="date">
+                            </div>
+                            <div class="form-group">
+                                <label for="periodoFin">Periodo final</label>
+                                <input formControlName="periodoFin" class="input-group" type="date">
+                            </div>
+                            <div class="form-group">
+                                <label for="precio">Precio</label>
+                                <div class="campoPrecio">
+                                    <input type="number" formControlName="precio" class="input-group col col-lg-2">
+                                    <p class="col-md-auto input-group">€</p>
+                                </div>
+                            </div>
+                            <!-- <div class="col">
+                                <p class="mensajeError" *ngIf="!campoValido('companyia')">El campo nombre es obligatorio</p>
+                                <p class="mensajeError" *ngIf="!campoValido('plan')">El campo medida_ancho es obligatorio</p>
+                                <p class="mensajeError" *ngIf="!campoValido('preiodoIni')">El campo medida_alto es obligatorio</p>
+                                <p class="mensajeError" *ngIf="!campoValido('periodoFin')">El campo medida_largo es obligatorio</p>
+                            </div> -->
+                            <button class="btn btn-info m-r-10" type="button" (click)="actualizarPago();">Aceptar</button>
+                            <button class="btn btn-danger" type="button" (click)="offModal3();">Cancelar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pdf" *ngIf=" activado == true" #archivoPDF>
+            <img id="iconoMobblerFactura" src="assets/img/logomobbler.png" />
+            <div>
+                <h5 class="colorLetraOscura">Carr. de San Vicente del Raspeig, s/n</h5>
+                <h5 class="colorLetraOscura">03690 San Vicente del Raspeig, Alicante</h5>
+            </div>
+            <h4 class="colorLetraOscura">{{nombreCompanyia}}</h4>
+            <table id="tablaFactura">
+                <thead>
+                    <tr>
+                        <th class="text-left colorLetraOscura">Fecha</th>
+                        <th class="text-left colorLetraOscura">Descripción</th>
+                        <th class="text-left colorLetraOscura">Periodo del servicio</th>
+                        <th class="text-right colorLetraOscura">Importe </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="colorLetraOscura">{{fechaActual}}</td>
+                        <td class="colorLetraOscura">{{planRecibo}}</td>
+                        <td class="colorLetraOscura">{{periodoIni}} - {{periodoFin}}</td>
+                        <td class="text-right colorLetraOscura">{{subtotalRecibo}} &euro;</td>
+                    </tr>
+                    <tr class="text-right">
+                        <th></th>
+                        <th></th>
+                        <th class="colorLetraOscura">Total Base Imponible</th>
+                        <td class="colorLetraOscura">{{subtotalRecibo}} &euro;</td>
+                    </tr>
+                    <tr class="text-right">
+                        <th></th>
+                        <th></th>
+                        <th class="colorLetraOscura">I.V.A 21%</th>
+                        <td class="colorLetraOscura">{{iva}} &euro;</td>
+                    </tr>
+
+                    <tr class="text-right">
+                        <th></th>
+                        <th></th>
+                        <th class="colorLetraOscura">TOTAL</th>
+                        <td class="colorLetraOscura">{{totalIVA}} &euro;</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4 class="colorLetraOscura">Forma de pago: <img class="iconoPago" src="assets/img/visa.png" /> **** **** **** 4231</h4>
+
+        </div>
+
+        <div class=" mt-2 mr-2 float-right ">
+            <app-pagination (cambiarPagina)="cambiarPagina( $event ) " [texto]="true " [totalRegistros]="totalcpagos" [registroActual]="posicionactual+1 " [registrosPorPagina]="registrosporpagina "></app-pagination>
+        </div>
+
+    </section>
+</div>

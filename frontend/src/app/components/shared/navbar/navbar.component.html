@@ -1,0 +1,114 @@
+<nav class="navbar navbar-expand-lg bg-primary">
+    <div class="container-fluid">
+        <div class="row justify-content-between">
+            <div class="col">
+                <!-- PRIMERO -->
+                <ul class="nav justify-content-start">
+                    <li class="nav-item active">
+                        <a class="nav-link active" [routerLink]="['/gestor-proyectos']">
+                            <img src="../../../../assets/img/proyectos.png" alt="">
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">
+                            <img src="../../../../assets/img/icons8-furniture-48.png" alt="">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" width="48" height="48" href="#">
+                            <img src="../../../../assets/img/box-icon.png" alt="">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" width="48" height="48" href="#">
+                            <img src="../../../../assets/img/undo.png" alt="">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" width="48" height="48" href="#">
+                            <img src="../../../../assets/img/redo.png" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- CENTRO -->
+            <div class="col-4 align-content-center">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item active">
+                        <a class="nav-link active" href="#">
+                            <img src="../../../../assets/img/camera-icon.png" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- FINAL -->
+            <div class="col size">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item active">
+                        <a class="nav-link-edited active" href="#">
+                            <img src="../../../../assets/img/message.png" alt="">
+                        </a>
+                    </li>
+
+                    <li class="nav-item active">
+                        <a class="nav-link-edited active" href="#">
+                            <img src="../../../../assets/img/alarm.png" alt="">
+                        </a>
+                    </li>
+
+                    <li class="nav-item active">
+                        <a class="nav-link-edited active" href="#">
+                            <img src="../../../../assets/img/share.png" alt="">
+                        </a>
+                    </li>
+
+                    <li class="nav-item active">
+                        <a class="nav-link-edited active" href="#">
+                            <img src="../../../../assets/img/save.png" alt="">
+                        </a>
+                    </li>
+
+                    <li class="nav-item active">
+                        <a class="nav-link-edited active" href="#">
+                            <img src="../../../../assets/img/icons8-combinar-git-48.png" alt="">
+                        </a>
+                    </li>
+
+                    <li class="nav-item active">
+                        <div class="dropdown">
+                            <!--Trigger-->
+                            <!-- <button class="btn btn-primary dropdown  fas fa-ellipsis-v px-2" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false"></button> -->
+                            <button class="nav-link-edited active btn dropdown-toggle dropdown-toggle fas fa-ellipsis-v px-2" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" dropdownToggle id="dropdownMenu1" role="button" (click)="user();">
+                              <img src="../../../../assets/img/user.png" alt="">
+                          </button>
+                            <!--Menu-->
+
+                            <div class="dropdown-menu dropdown-primary" id="OtroTema">
+                                <a class="dropdown-item" href="#"><i class="fab fa-apple-pay"></i>&nbsp;&nbsp;Pay</a>
+                                <a class="dropdown-item" href="#"><i class="fas fa-bell-slash"></i>&nbsp;&nbsp;Disable alertss</a>
+                                <a class="dropdown-item" href="#"><i class="far fa-envelope"></i>&nbsp;&nbsp;Check mail</a>
+                                <a class="nav-link active" (click)="logout()">Logout</a>
+                            </div>
+                        </div>
+                    </li>
+                        
+                    <li class="nav-item active">
+                        <a class="nav-link active" (click)="logout()">
+                            <img src="../../../../assets/img/logout.png" alt="" width="48" height="48">
+                        </a>
+                    </li>
+
+                    <li class="nav-item active">
+                        <a class="nav-link-edited active" href="#">
+                            <img src="../../../../assets/img/ask-icon.png" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>

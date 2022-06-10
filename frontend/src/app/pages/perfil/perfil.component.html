@@ -1,0 +1,438 @@
+<div class="wrapper">
+    <div class="page-header">
+        <img (click)="atras()" class="flecha" src="assets/img/flecha-izquierda.png">
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                    <div class="cursorPointer card-body pestanya card-register " id="perfil" title="perfil" (click)="Seleccionseccion('perfil')"><a>Perfil</a></div>
+                    <div class="cursorPointer card-body pestanya card-register " id="contraseña" title="contraseña" (click)="Seleccionseccion('contraseña')"><a>Contraseña</a></div>
+                    <div class="cursorPointer card-body  pestanya card-register " id="plan" title="plan" (click)="Seleccionseccion('plan')"><a>Plan</a></div>
+                    <div class="cursorPointer card-body  pestanya card-register " id="factura" title="factura" (click)="Seleccionseccion('factura')"><a>Facturas</a></div>
+                    <div class="cursorPointer card-body  pestanya card-register " id="estadisticas" title="estadisticas" (click)="Seleccionseccion('estadisticas')"><a>Estadísticas</a></div>
+
+                    <div class="card card-register sombra" id="perfilcard">
+                        <form class="form-horizontal m-t-20" [formGroup]="datosForm" (ngSubmit)="enviar()">
+                            <div class="card-body">
+                                <div class="text-success text-right animate__animated animate__faster" [ngClass]="{'animate__fadeIn': showOKD && datosForm.pristine, 'animate__fadeOut' : !(showOKD && datosForm.pristine)}"></div>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="card-header col-sm-4">
+                                            <h3 _ngcontent-tmy-c69="">Datos Empresa</h3>
+                                            <p>Son los datos que se tienen sobre la empresa. Asegúrate de que sean correctos para poder realizar correctamente la facturación</p>
+                                        </div>
+                                        <table class="table col-sm">
+                                            <tr>
+                                                <td> Nombre de la compañia:</td>
+                                                <input type="text" class="form-control" formControlName="company" [ngClass]="{'is-invalid' : campoNoValido('company')}" id="company">
+                                                <div class="invalid-feedback">
+                                                    El campo es obligatorio
+                                                </div>
+                                            </tr>
+                                            <tr>
+                                                <td> Correo Electrónico:</td>
+                                                <input type="text" class="form-control" formControlName="email" [ngClass]="{'is-invalid' : campoNoValido('email')}" id="email">
+                                                <div class="invalid-feedback">
+                                                    El campo es obligatorio
+                                                </div>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <hr style="height:2px;border-width:0;color:#e3e3e3;background-color:#e3e3e3; max-width: 1030px;">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="card-header col-sm-4">
+                                            <h3 _ngcontent-tmy-c69="">Datos Empresario</h3>
+                                            <p>Son los datos del empresario al cual le llegará la factura cada vez que se tramite una compra</p>
+                                            <!-- <img [src]="crearImagenUrl(usuario.imagen)" width="30px" class="rounded-circle fotoperfilimg"> -->
+                                            <img [src]="imagenUrl" alt="user" class="rounded-circle" width="31" id="fotoperfilnavbar">
+                                            <!-- <img class="perfil-foto" src="../../../assets/img/my-account.png" alt="Imagen de perfil" class=" rounded-circle"> -->
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" formControlName="imagen" lang="es" id="fotoperfil" (change)="cambioImagen( $event )">
+                                                <label style="cursor: pointer" class="custom-file-label" for="fotoperfil" data-browse="Elegir" lang="es">{{fileText}}</label>
+                                            </div>
+                                        </div>
+                                        <table class="table-1 col-sm">
+                                            <tr>
+                                                <td>Nombre:</td>
+                                                <input type="text" class="form-control" formControlName="nombre" id="nombre">
+                                                <div class="invalid-feedback">
+                                                    El campo es obligatorio
+                                                </div>
+                                            </tr>
+                                            <tr>
+                                                <td>Apellidos:</td>
+                                                <input type="text" class="form-control" formControlName="apellidos" id="apellidos">
+                                            </tr>
+                                            <tr>
+                                                <td>Dirección:</td>
+                                                <input type="text" class="form-control" formControlName="direccion" id="direccion">
+                                            </tr>
+                                            <tr>
+                                                <td class="input_2">NIF:</td>
+                                                <input type="text" class="form-control" formControlName="nif" id="nif">
+                                            </tr>
+                                            <tr>
+                                                <td>Telefono:</td>
+                                                <input type="text" class="form-control" formControlName="telefono" id="telefono">
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div><a style="color: blue !important; cursor: pointer;" (click)="darBaja()">Darse de baja</a></div>
+                                <div class="align-content-center">
+                                    <button class="btn btn-primary btn-neutral" type="submit " id="enviar" [disabled]="datosForm.pristine">Cambiar</button>
+                                    <button class="btn btn-danger " (click)="cargarUsuario()" type="button" id="cancelar" [disabled]="datosForm.pristine">Cancelar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="card card-register" id="contraseñacard">
+                        <form class="form-horizontal m-t-20" [formGroup]="datosPassword" (ngSubmit)="cambiarPassword()">
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="card-header col-sm-4">
+                                            <h3 _ngcontent-tmy-c69="">Contraseña</h3>
+
+                                        </div>
+
+                                        <table class="table col-sm">
+                                            <tr>
+                                                <td> Contraseña:</td>
+                                                <input type="password" class="form-control" formControlName="password" [ngClass]="{'is-invalid' : campopNoValido('password')}" id="password" autocomplete="off">
+                                                <div class="invalid-feedback">
+                                                    El campo es obligatorio
+                                                </div>
+                                            </tr>
+                                            <tr>
+                                                <td> Nueva contraseña:</td>
+                                                <input type="password" name="pass" id="txtConfirmPassword" class="form-control" formControlName="nuevopassword" [ngClass]="{'is-invalid' : campopNoValido('nuevopassword')}" id="nuevopassword" autocomplete="off" (keyup)="sendit($event.target.value)">
+
+                                                <div class="invalid-feedback">
+                                                    El campo es obligatorio
+                                                </div>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td class="passcheck" id="passcheck"><span id="passstrength"></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td> Repite la nueva contraseña:</td>
+                                                <input type="nuevopassword2" class="form-control" formControlName="nuevopassword2" [ngClass]="{'is-invalid' : campopNoValido('nuevopassword2') || passwordNoIgual()}" id="nuevopassword2" autocomplete="off">
+                                                <div class="invalid-feedback" *ngIf="campopNoValido('nuevopassword2')">
+                                                    El campo es obligatorio
+                                                </div>
+                                                <div class="invalid-feedback" *ngIf="passwordNoIgual()">
+                                                    La contraseña repetida no es igual a la nueva contraseña
+                                                </div>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary btn-neutral" type="submit " id="enviarpassword" [disabled]="datosPassword.pristine">Cambiar</button>
+                                <button class="btn btn-danger " (click)="cancelarPassword()" type="button" id="cancelarpw" [disabled]="datosPassword.pristine">Cancelar</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card card-register" id="plancard">
+                        <div class="card-body">
+                            <div class="card-header col-sm-4">
+                                <h3 _ngcontent-tmy-c69="">Planes</h3>
+                            </div>
+
+                            <TABLE class="plan-table" BORDER>
+                                <TR>
+                                    <TH>GRATUITO</TH>
+                                    <div class="cursorPointer tu-plan" id="GRATUITO" (click)="cambio_valor_plan('GRATUITO')">
+                                        <TD class="texto-1 GRATUITO"></TD>
+                                        <TD class="texto GRATUITO">
+                                            <div class="tuplan" *ngIf="campoplanNoValido('GRATUITO')" class="GRATUITO">
+                                                Tu plan
+                                            </div>
+                                            Contarás con 2 proyectos para utilizar y 1 catálogo para probar su funcionalidad</TD>
+                                        <TD class="texto-1 GRATUITO">0€</TD>
+                                    </div>
+
+                                </TR>
+                                <TR>
+                                    <TH ROWSPAN=2>MENSUAL</TH>
+                                    <div class="cursorPointer tu-plan" id="BASICO-MENSUAL" (click)="cambio_valor_plan('BASICO-MENSUAL')">
+                                        <TD class="texto-1">BÁSICO</TD>
+                                        <TD class="texto">
+                                            <div class="tuplan" *ngIf="campoplanNoValido('BASICO-MENSUAL')" class="BASICO-MENSUAL">
+                                                Tu plan
+                                            </div>
+                                            Contarás con 30 proyectos para utilizar y 8 catálogos entre los que elegir</TD>
+                                        <TD class="texto-1">11,99€</TD>
+                                    </div>
+                                </TR>
+                                <TR>
+                                    <div class="cursorPointer tu-plan" id="PREMIUM-MENSUAL" (click)="cambio_valor_plan('PREMIUM-MENSUAL')">
+                                        <TD class="texto-1">PREMIUM</TD>
+                                        <TD class="texto">
+                                            <div class="tuplan" *ngIf="campoplanNoValido('PREMIUM-MENSUAL')" class="PREMIUM-MENSUAL">
+                                                Tu plan
+                                            </div>
+                                            Contarás con proyectos y catalogos para trabajar</TD>
+                                        <TD class="texto-1">30€</TD>
+                                    </div>
+                                </TR>
+
+                                <TR>
+                                    <TH ROWSPAN=2>ANUAL</TH>
+                                    <div class="cursorPointer tu-plan" id="BASICO-ANUAL" (click)="cambio_valor_plan('BASICO-ANUAL')">
+                                        <TD class="texto-1">BÁSICO</TD>
+                                        <TD class="texto">
+                                            <div class="tuplan" *ngIf="campoplanNoValido('BASICO-ANUAL')" class="BASICO-ANUAL">
+                                                Tu plan
+                                            </div>
+                                            Contarás con 30 proyectos para utilizar y 8 catálogos entre los que elegir</TD>
+                                        <TD class="texto-1">119,99€</TD>
+                                    </div>
+                                </TR>
+
+                                <TR>
+                                    <div class="cursorPointer tu-plan" id="PREMIUM-ANUAL" (click)="cambio_valor_plan('PREMIUM-ANUAL')">
+                                        <TD class="texto-1">PREMIUM</TD>
+                                        <TD class="texto">
+                                            <div class="tuplan" *ngIf="campoplanNoValido('PREMIUM-ANUAL')" class="PREMIUM-ANUAL">
+                                                Tu plan
+                                            </div>
+                                            Contarás con proyectos y catalogos para trabajar</TD>
+                                        <TD class="texto-1">256€</TD>
+                                    </div>
+                                </TR>
+                            </TABLE>
+                            <button class="btn btn-primary m-r-20 " type="submit " (click)="cambiarplan()" id="cambiarplan">Cambiar plan</button>
+                        </div>
+                    </div>
+                    <div class="card card-register" id="facturacard">
+
+                        <div class="card-body">
+                            <div class="card-header col-sm-4">
+                                <h3 _ngcontent-tmy-c69="">Tus facturas</h3>
+
+                            </div>
+
+
+                            <table class="table table-striped table-factura">
+                                <thead>
+                                    <tr class="colorLetraOscura cabezaTabla">
+
+                                        <th class="text-left">
+                                            <div class="linea">
+                                                <div>Plan</div>
+
+                                            </div>
+                                        </th>
+                                        <th class="text-left">Periodo</th>
+                                        <th class="text-left">
+                                            <div class="linea">
+                                                <div>Precio</div>
+
+                                            </div>
+                                        </th>
+                                        <th class="text-left">
+                                            <div class="linea">
+                                                <div>Fecha de Emisión</div>
+
+                                            </div>
+                                        </th>
+                                        <th class="text-left">
+                                            <div class="linea">
+                                                <div>Descargar</div>
+
+                                            </div>
+                                        </th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="colorLetraOscura" *ngFor="let pago of listaPagos">
+                                        <td>{{pago.plan}}</td>
+                                        <td>{{pago.periodoIni | date : 'dd/MM/yyyy '}} - {{pago.periodoFin | date : 'dd/MM/yyyy '}}</td>
+                                        <td>{{pago.precio}} &euro;</td>
+                                        <td>{{pago.fechaC | date : 'dd/MM/yyyy '}}</td>
+                                        <td class="td-actions">
+                                            <img style="cursor: pointer;" (click)="createPDF(pago.uid)" class="icono" src="assets/img/download_black.png" width="30" height="50" />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="pdf" *ngIf=" activado == true" #archivoPDF>
+                                <img id="iconoMobblerFactura" src="assets/img/logomobbler.png" />
+                                <div>
+                                    <h5 class="colorLetraOscura">Carr. de San Vicente del Raspeig, s/n</h5>
+                                    <h5 class="colorLetraOscura">03690 San Vicente del Raspeig, Alicante</h5>
+                                </div>
+                                <h4 class="colorLetraOscura">{{nombreCompanyia}}</h4>
+                                <table id="tablaFactura">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-left colorLetraOscura">Fecha</th>
+                                            <th class="text-left colorLetraOscura">Descripción</th>
+                                            <th class="text-left colorLetraOscura">Periodo del servicio</th>
+                                            <th class="text-right colorLetraOscura">Importe </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="colorLetraOscura">{{fechaActual}}</td>
+                                            <td class="colorLetraOscura">{{planRecibo}}</td>
+                                            <td class="colorLetraOscura">{{periodoIni}} - {{periodoFin}}</td>
+                                            <td class="text-right colorLetraOscura">{{subtotalRecibo}} &euro;</td>
+                                        </tr>
+                                        <tr class="text-right">
+                                            <th></th>
+                                            <th></th>
+                                            <th class="colorLetraOscura">Total Base Imponible</th>
+                                            <td class="colorLetraOscura">{{subtotalRecibo}} &euro;</td>
+                                        </tr>
+                                        <tr class="text-right">
+                                            <th></th>
+                                            <th></th>
+                                            <th class="colorLetraOscura">I.V.A 21%</th>
+                                            <td class="colorLetraOscura">{{iva}} &euro;</td>
+                                        </tr>
+
+                                        <tr class="text-right">
+                                            <th></th>
+                                            <th></th>
+                                            <th class="colorLetraOscura">TOTAL</th>
+                                            <td class="colorLetraOscura">{{totalIVA}} &euro;</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                            <div class="card-footer">
+                                <div class=" mt-2 mr-2 float-right ">
+                                    <app-pagination (cambiarPagina)="cambiarPagina( $event ) " [texto]="true " [totalRegistros]="totalcpagos" [registroActual]="posicionactual+1 " [registrosPorPagina]="registrosporpagina "></app-pagination>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="card card-register" id="estadisticascard">
+                        <div class="card-body">
+                            <iframe title="BBDD_cliente" width="1082.25" height="650" src="https://app.powerbi.com/reportEmbed?reportId=546e5fbb-a419-4e37-812a-554cad50741b&autoAuth=true&ctid=083eba06-6fa9-47f7-ab7a-31795d740807&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLW5vcnRoLWV1cm9wZS1yZWRpcmVjdC5hbmFseXNpcy53aW5kb3dzLm5ldC8ifQ%3D%3D"
+                                frameborder="0" allowFullScreen="true"></iframe>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div #modulo style="display:none" class="modal" aria-hidden="true" aria-labelledby="myModalLabel" bsModal #myModal="bs-modal" role="dialog" tabindex="-1">
+        <div class="modal-dialog">
+            <div id="scroll_modelos" class="modal-content">
+                <div class="modal-header justify-content-center">
+                    <button aria-hidden="true" class="close" data-dismiss="modal" type="button" (click)="offModal()">
+                <i class="tim-icons icon-simple-remove"> </i>
+                </button>
+                    <h4 id="facturacion" class="title title-up"> 1.FACTURACIÓN </h4>
+                    <h4 class="title title-up"> >> </h4>
+                    <h4 id="metodo" class="title title-up"> 2.MÉTODO DE PAGO </h4>
+                    <h4 class="title title-up"> >> </h4>
+                    <h4 id="confirmacion" class="title title-up"> 3.CONFIRMACIÓN</h4>
+                </div>
+                <div class="pasarela modal-body">
+                    <div id="paso1">
+                        <h5> Datos de de facturación</h5>
+                        <form class="form-horizontal m-t-20" [formGroup]="datosForm" (ngSubmit)="enviar()">
+                            <div class="card-body">
+                                <div class="text-success text-right animate__animated animate__faster" [ngClass]="{'animate__fadeIn': showOKD && datosForm.pristine, 'animate__fadeOut' : !(showOKD && datosForm.pristine)}"></div>
+                                <div class="container">
+                                    <div class="row">
+                                        <table class="pasarelatable table col-sm">
+                                            <tr>
+                                                <td> Nombre de la compañia:</td>
+                                                <input type="text" class="form-control" formControlName="company" [ngClass]="{'is-invalid' : campoNoValido('company')}" id="company">
+                                                <div class="invalid-feedback">
+                                                    El campo es obligatorio
+                                                </div>
+                                            </tr>
+                                            <tr>
+                                                <td> Correo Electrónico:</td>
+                                                <input type="text" class="form-control" formControlName="email" [ngClass]="{'is-invalid' : campoNoValido('email')}" id="email">
+                                                <div class="invalid-feedback">
+                                                    El campo es obligatorio
+                                                </div>
+                                            </tr>
+                                            <tr>
+                                                <td>Nombre:</td>
+                                                <input type="text" class="form-control" formControlName="nombre" id="nombre">
+                                                <div class="invalid-feedback">
+                                                    El campo es obligatorio
+                                                </div>
+                                            </tr>
+                                            <tr>
+                                                <td>Apellidos:</td>
+                                                <input type="text" class="form-control" formControlName="apellidos" id="apellidos">
+                                            </tr>
+                                            <tr>
+                                                <td>Dirección:</td>
+                                                <input type="text" class="form-control" formControlName="direccion" id="direccion">
+                                            </tr>
+                                            <tr>
+                                                <td class="input_2">NIF:</td>
+                                                <input type="text" class="form-control" formControlName="nif" id="nif">
+                                            </tr>
+                                            <tr>
+                                                <td>Telefono:</td>
+                                                <input type="text" class="form-control" formControlName="telefono" id="telefono">
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+
+                    </div>
+                    <div style="display:none" id="paso2">
+                        <h5>Forma de pago</h5>
+                        <div class="radio-container">
+                            <div class="radio">
+                                <input id="radio-1" name="radio" type="radio" checked>
+                                <label for="radio-1" class="radio-label"> <img class="pasarelaimg" src="./../../../assets/img/paypal.png" alt="Paypal">Paypal</label>
+                            </div>
+
+                            <div class="radio">
+                                <input id="radio-2" name="radio" type="radio">
+                                <label for="radio-2" class="radio-label"> <img class="pasarelaimg" src="./../../../assets/img/Visa-mastercard.png" alt="Tarjeta Mastercard o Visa">Tarjeta</label>
+                            </div>
+                            <div class="radio">
+                                <input id="radio-3" name="radio" type="radio">
+                                <label for="radio-3" class="radio-label"> <img class="pasarelaimg" src="./../../../assets/img/Bizum.png" alt="Bizum">Bizum</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display:none" id="paso3">
+                        <h5>Confirmación de datos</h5>
+                        <div class="confirm-container">
+                            <p>Nombre de la compañia: {{this.companya}}</p>
+                            <p>Correo electrónico: {{this.correo}}</p>
+                            <p>Nombre: {{this.nom}}</p>
+                            <p>Apellidos: {{this.apellidos}}</p>
+                            <p>Dirección: {{this.dir}}</p>
+                            <p>NIF: {{this.nif}}</p>
+                            <p>Telefono: {{this.tlfn}}</p>
+
+                            <p>Tu plan: {{this.plan_usu}}</p>
+                            <p>Precio: {{this.precio_usu}}</p>
+                        </div>
+                    </div>
+
+                    <button id="anterior" _ngcontent-rbw-c33="" type="submit" class=" btn btn-primary m-r-20" (click)="pasarela('anterior'); ">Anterior</button>
+                    <button id="siguiente" _ngcontent-rbw-c33="" type="submit " class=" btn btn-primary m-r-20" (click)="pasarela('siguiente');enviar();">Siguiente</button>
+                </div>
+            </div>
+        </div>
+    </div>

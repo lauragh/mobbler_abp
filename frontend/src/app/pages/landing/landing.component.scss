@@ -1,0 +1,171 @@
+@font-face {
+    font-family: 'Bison';
+    src: url('../../../assets/fonts/Bison-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#isotipo {
+    width: 7%;
+}
+
+#logotipo {
+    font-family: 'Bison';
+    font-size: 200%;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    letter-spacing: 6px;
+}
+
+#logo {
+    padding-top: 6px;
+}
+
+#forma-hab {
+    position: relative;
+}
+
+#rejilla {
+    position: absolute;
+}
+
+.fondo {
+    background-image: url("/assets/img/fondo.png");
+    opacity: 100%;
+}
+
+#tikamoon {
+    width: 90%;
+}
+
+#circulos {
+    width: 60%;
+    position: relative;
+    left: 200px;
+    top: 20px;
+}
+
+#catalogo {
+    position: relative;
+    left: 20px;
+    top: 100px;
+}
+
+#eslogan_catalogo {
+    max-width: 50%;
+    margin-left: 80px;
+    padding: 20px;
+}
+
+#seccion_comentarios {
+    width: 70%;
+}
+
+#descripcion {
+    background-color: white;
+}
+
+.colorLetraOscura {
+    color: #404040;
+}
+
+.iconosDescripcion {
+    width: 30%;
+}
+
+.contenidoDescripcion {
+    text-align: justify;
+    margin-top: 5px;
+}
+
+.columnaContenido {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.h3Personalizado {
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+.reja {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.rejPlan {
+    grid-template-columns: 20px 100px;
+    align-items: center;
+    justify-items: center;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.rejPlan>img {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    margin-left: 10%;
+}
+
+.rejPlan>h4 {
+    grid-column-start: 2;
+    grid-row-start: 1;
+    margin-left: 10%;
+}
+
+.col {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.col>* {
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+.checked {
+    width: 20px;
+}
+
+.contenidoPlan {
+    margin-left: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.contenidoPlan2 {
+    margin-left: 50px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.descripcionPlan {
+    margin: 5px;
+}
+
+.h4Personalizado {
+    margin: 0;
+}
+
+.h3Plan {
+    position: relative;
+    top: -70px;
+}
+
+.h3Plan1 {
+    position: relative;
+    top: -90px;
+}
+
+.h3bPlan {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.h1Plan {
+    margin-bottom: 10px;
+}

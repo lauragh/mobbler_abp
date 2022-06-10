@@ -1,0 +1,225 @@
+<div id="contenedor">
+    <app-sidebar></app-sidebar>
+    <section class="tabla">
+        <div class="row">
+            <div class="col">
+                <h1 class="font">Clientes</h1>
+            </div>
+            <div class="col">
+                <div class="float-right">
+                    <button class="nav-link btn btn-primary" routerLink="/user/new-client">Nuevo <i class="fa fa-plus m-l-10"></i></button>
+                </div>
+            </div>
+            <hr class="separador">
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="input-group">
+                    <input #txtBuscar type="text" class="form-control" id="fname" placeholder="Buscar">
+                    <div class="input-group-append">
+                        <span class="input-group-text micursor" (click)="txtBuscar.value =''; cargarUsuarios(txtBuscar.value)"><i class="fa fa-times-circle"></i></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-2 linea">
+                <button class="nav-link btn btn-secondary" (click)="cargarUsuarios(txtBuscar.value);">Buscar <i ></i></button>
+                <button class="nav-link btn btn-secondary" (click)="cargarUsuarios('');">Borrar <i ></i></button>
+            </div>
+
+            <div class=" mt-2 mr-2 float-right ">
+                <!-- <app-pagination (cambiarPagina)="cambiarPagina( $event ) " [texto]="true " [totalRegistros]="totalusuarios " [registroActual]="posicionactual+1 " [registrosPorPagina]="registrosporpagina "></app-pagination> -->
+            </div>
+        </div>
+
+        <table class="table table-striped">
+            <thead>
+                <tr class="colorLetraOscura">
+                    <th>Imagen</th>
+                    <th>Nombre</th>
+                    <th>Compañía</th>
+                    <th>Plan</th>
+                    <th>Nº Proyectos</th>
+                    <th>Nº Catálogos</th>
+                    <!-- <th>Proyectos</th> -->
+                    <th>Fecha alta</th>
+                    <!-- <th>Catálogos</th> -->
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="colorLetraOscura" *ngFor="let usuario of listaUsuarios">
+                    <td class="text-center">
+                        <img [src]="crearImagenUrl(usuario.imagen)" width="30px" class="rounded-circle fotoperfilimg">
+                    </td>
+                    <td *ngIf="!usuario.nombre && !usuario.apellidos">No especificado</td>
+                    <td *ngIf="usuario.nombre && usuario.apellidos">{{usuario.nombre + ' ' + usuario.apellidos}}</td>
+                    <td>{{usuario.company}}</td>
+                    <td>{{usuario.plan}}</td>
+                    <td>{{usuario.numProjects}}</td>
+                    <td>{{usuario.numCatalog}}</td>
+                    <!-- <td>{{usuario.proyecto}}<br></td> -->
+                    <td>{{usuario.alta | date : 'dd/MM/yyyy '}}</td>
+                    <!-- <td>{{usuario.catalogos}}</td> -->
+                    <td>
+                        <button type="button" rel="tooltip" class="btn btn-info btn-sm btn-round btn-icon" data-target="#myModal" (click)="onModal2(usuario)">
+                            <i class="tim-icons icon-pencil"></i>
+                        </button>
+                        <button type="button" rel="tooltip" class="btn btn-danger btn-sm btn-round btn-icon">
+                                <i class="tim-icons icon-trash-simple" (click)="eliminarUsuario(usuario.uid, usuario.nombre, usuario.apellidos)"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- MODAL -->
+        <div #modificar class="container modal" *ngIf="switchModal2 == true">
+            <div class="">
+                <!-- MODIFICAR CLIENTE -->
+                <div class="row" aria-hidden="true" aria-labelledby="myModalLabel" bsModal #myModal="bs-modal" role="dialog" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header justify-content-center">
+                                <h4 class="title title-up">Editar cliente</h4>
+                            </div>
+                            <div class="modal-body">
+                                <form class="form-horizontal m-t-20" [formGroup]="datosForm">
+                                    <div class="row m-t-10">
+                                        <div class="col-lg-3 col-md-12 text-lg-right">
+                                            <span class="">Nombre</span>
+                                        </div>
+                                        <div class="col-lg-8 col-md-12">
+                                            <input type="text" class="input-group" formControlName="nombre" [ngClass]="{'is-invalid' : campoNoValido('nombre')}" id="nombre">
+                                            <div class="invalid-feedback">
+                                                El campo es obligatorio
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row m-t-10">
+                                        <div class="col-lg-3 col-md-12 text-lg-right">
+                                            <span class="">Apellidos</span>
+                                        </div>
+                                        <div class="col-lg-8 col-md-12">
+                                            <input type="text" class="input-group" formControlName="apellidos" [ngClass]="{'is-invalid' : campoNoValido('apellidos')}" id="apellidos">
+                                            <div class="invalid-feedback">
+                                                El campo es obligatorio
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class=" row m-t-10 ">
+                                        <div class="col-lg-3 col-md-12 text-lg-right ">
+                                            <span class=" ">Email</span>
+                                        </div>
+                                        <div class="col-lg-8 col-md-12 ">
+                                            <input type="text" class="input-group" formControlName="email" [ngClass]="{ 'is-invalid' : campoNoValido( 'email')} " id="email ">
+                                            <div class="invalid-feedback ">
+                                                El campo es obligatorio
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row m-t-10">
+                                        <div class="col-lg-3 col-md-12 text-lg-right">
+                                            <span class="">Password</span>
+                                        </div>
+                                        <div class="col-lg-8 col-md-12">
+                                            <input type="password" class="input-group" formControlName="password" [ngClass]="{'is-invalid' : campoNoValido('password')}" id="password">
+                                            <div class="invalid-feedback">
+                                                El campo es obligatorio
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row m-t-10">
+                                        <div class="col-lg-3 col-md-12 text-lg-right">
+                                            <span class="">Compañía</span>
+                                        </div>
+                                        <div class="col-lg-8 col-md-12">
+                                            <input type="text" class="input-group" formControlName="company" [ngClass]="{'is-invalid' : campoNoValido('company')}" id="company">
+                                            <div class="invalid-feedback">
+                                                El campo es obligatorio
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row m-t-10">
+                                        <div class="col-lg-3 col-md-12 text-lg-right">
+                                            <span class="">Plan</span>
+                                        </div>
+                                        <div class="col-lg-8 col-md-12">
+                                            <select id="plan" class="input-group" formControlName="plan">
+                                                <option selected [ngClass]="{'is-invalid' : campoNoValido('plan')}">Elige plan...</option>
+                                                <option value="Gratuito">Gratuito</option>
+                                                <option value="Básico">Básico</option>
+                                                <option value="Premium">Premium</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class=" row m-t-10">
+                                        <div class="col-lg-3 col-md-12 text-lg-right ">
+                                            <span class=" ">Nº Proyectos</span>
+                                        </div>
+                                        <div class="col-lg-8 col-md-12 ">
+                                            <input type="number" class="input-group" formControlName="proyecto" [ngClass]="{ 'is-invalid' : campoNoValido('proyecto')} " id="proyecto">
+                                            <div class="invalid-feedback ">
+                                                El campo es obligatorio
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex justify-content-center m-t-10">
+                                        <div class="align-content-center">
+                                            <button class="btn btn-primary m-r-20" type="submit" (click)="enviar(usuario)" id="enviar" [disabled]="datosForm.pristine">Modificar</button>
+                                            <button class="btn btn-danger" type="button" (click)="cancelar()" id="cancelar">Cancelar</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CAMBIAR CONTRASEÑA -->
+                <div class="row">
+                    <div class="container">
+                        <div #pass aria-hidden="true" aria-labelledby="myModalLabel" bsModal #myModal="bs-modal" role="dialog" tabindex="-1">
+                            <div class="modal-dialog" *ngIf="!enablepass">
+                                <div class="modal-content">
+                                    <div class="modal-header justify-content-center">
+                                        <h4 class="title title-up">Cambiar contraseña</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form class="form-horizontal m-t-20" [formGroup]="nuevoPassword" (ngSubmit)="cambiarPassword()">
+                                            <div class="row m-t-10">
+                                                <div class="col-lg-3 col-md-12 text-lg-right">
+                                                    <span class="">Nueva contraseña</span>
+                                                </div>
+                                                <div class="col-lg-8 col-md-12">
+                                                    <input type="password" class="input-group" class="input-group" formControlName="password" id="uid">
+                                                </div>
+                                                <div class="text-success col-lg-3 text-lg-left text-right animate__animated animate__faster" *ngIf="(showOKP)" [ngClass]="{'animate__fadeIn': (nuevoPassword.pristine && showOKP), 'animate__fadeOut': (!nuevoPassword.pristine)   }">
+                                                    Actualizada
+                                                </div>
+                                            </div>
+
+                                            <!--Botones-->
+                                            <div class="d-flex align-items-center">
+                                                <div class="justify-content-between">
+                                                    <button class="btn btn-primary m-r-20" type="submit " id="enviarpassword" [disabled]="nuevoPassword.pristine || nuevoPassword.get('password').value.length===0"><i class="fa fa-key m-r-10"></i>Cambiar contraseña</button>
+                                                    <button class="btn btn-danger " (click)="nuevoPassword.reset();showOKP = false;" type="button" [disabled]="nuevoPassword.pristine || nuevoPassword.get('password').value.length===0">Cancelar</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class=" mt-2 mr-2 float-right ">
+            <app-pagination (cambiarPagina)="cambiarPagina( $event ) " [texto]="true" [totalRegistros]="totalusuarios" [registroActual]="posicionactual+1" [registrosPorPagina]="registrosporpagina"></app-pagination>
+        </div>
+    </section>
+</div>

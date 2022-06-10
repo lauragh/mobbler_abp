@@ -1,0 +1,63 @@
+<div id="contenedor">
+    <app-sidebar></app-sidebar>
+    <section class="tabla">
+        <h1 id="h1Personalizado">CLIENTES</h1>
+        <div aria-hidden="true" aria-labelledby="myModalLabel" bsModal #myModal="bs-modal" role="dialog" tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header justify-content-center">
+                  <h4 class="title title-up">Nuevo cliente</h4>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="datosForm" (ngSubmit)="enviar()">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="nombre">Nombre</label>
+                                <input type="texto" class="form-control" formControlName="nombre" id="nombre" [ngClass]="{'is-invalid' : campoNoValido('nombre')}" placeholder="Nombre">
+                            </div>
+            
+                            <div class="form-group col-md-6">
+                                <label for="apellidos">Apellidos</label>
+                                <input type="texto" class="form-control" formControlName="apellidos" id="apellidos" [ngClass]="{'is-invalid' : campoNoValido('apellidos')}" placeholder="Apellidos">
+                            </div>
+            
+                            <div class="form-group col-md-6">
+                                <label for="email">E-mail</label>
+                                <input type="email" class="form-control" formControlName="email" id="email" [ngClass]="{'is-invalid' : campoNoValido('email')}" placeholder="E-mail">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" formControlName="password" id="password" [ngClass]="{'is-invalid' : campoNoValido('password')}" placeholder="Password">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="company">Compañía</label>
+                          <input type="text" class="form-control" formControlName="company" id="company" [ngClass]="{'is-invalid' : campoNoValido('company')}" placeholder="Nombre compañía">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="plan">Plan</label>
+                            <select id="plan" class="form-control" formControlName="plan" [ngClass]="{'is-invalid' : campoNoValido('plan')}">
+                              <option selected>Elige plan...</option>
+                              <option value="Gratuito">Gratuito</option>
+                              <option value="Básico">Básico</option>
+                              <option value="Premium">Premium</option>
+                            </select>
+                        </div>
+
+                        <!-- <button type="submit" class="btn btn-primary">Sign in</button> -->
+                        <div class="d-flex justify-content-center m-t-10">
+                            <div class="align-content-center">
+                                <button class="btn btn-primary m-r-20" type="submit" id="enviar" [disabled]="datosForm.pristine">Crear</button>
+                                <button class="btn btn-info m-r-10" [disabled]="datosForm.pristine" routerLink="/user">Volver</button>
+                                <button class="btn btn-danger" type="button" (click)="cancelar()" id="cancelar" [disabled]="datosForm.pristine">Cancelar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+              </div>
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,125 @@
+<!--
+=========================================================
+* BLK Design System Angular - v1.2.0
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/blk-design-system-angular
+* Copyright 2021 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT
+
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png" />
+    <link rel="icon" type="image/png" href="./assets/img/favicon.png" />
+    <title>Mobbler</title>
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="assets/css/chatbot-css.css" />
+    <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.1/dist/html2canvas.min.js"></script>
+
+    <meta name="google-signin-client_id" content="302145871404-ouh4drlvkj3a03vt0vsikkdtdnnt5nl4.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js"></script>
+
+</head>
+
+<body>
+    <script>
+        !(function() {
+            let e = document.createElement("script"),
+                t = document.head || document.getElementsByTagName("head")[0];
+            (e.src =
+                "https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.js"),
+            // Replace 1.x.x with the version that you want
+            (e.async = !0),
+            (e.onload = () => {
+                window.WebChat.default({
+                        customData: {
+                            language: "es"
+                        },
+                        socketUrl: "https://mobbler.ovh/",
+                        initPayload: "/saludos",
+                        inputTextFieldHint: "Escribe un mensaje",
+                        socketPath: "/chatbot/socket.io/",
+                        profileAvatar: "../assets/img/Ren-blanco.png",
+                        userBackgroundColor: "#ea5353",
+                        userTextColor: "white",
+                        mainColor: "#ea5353",
+                        title: "Ren",
+                        connectingText: "Bot no está conectado. Esperando...",
+                        openLauncherImage: "../assets/img/Ren2.png",
+                        autofocus: true,
+                        params: {
+                            storage: "session" // <<< Try changing to "local"
+                        }
+                        // add other props here
+                    },
+                    null
+                );
+            }),
+            t.insertBefore(e, t.firstChild);
+        })();
+    </script>
+    <!-- Marcado JSON-LD generado por el Asistente para el marcado de datos estructurados de Google. -->
+    <script type="application/ld+json">
+        [{
+            "@context": "http://schema.org",
+            "@type": "SoftwareApplication",
+            "image": "https://mobbler.ovh/assets/img/iconomobbler.png",
+            "url": "http://xn--sesin-3ta/"
+        }, {
+            "@context": "http://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "habitacion 3d",
+            "image": ["https://mobbler.ovh/assets/img/tikamoon.png", "https://mobbler.ovh/assets/img/catalogo.png", "https://mobbler.ovh/assets/img/comentarios.png", "https://mobbler.ovh/assets/img/online.png", "https://mobbler.ovh/assets/img/3d.png", "https://mobbler.ovh/assets/img/presupuesto.png"],
+            "url": "https://mobbler.ovh/#/landing"
+        }, {
+            "@context": "http://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "habitacion 3d",
+            "image": ["https://mobbler.ovh/assets/img/tikamoon.png", "https://mobbler.ovh/assets/img/catalogo.png", "https://mobbler.ovh/assets/img/comentarios.png", "https://mobbler.ovh/assets/img/online.png", "https://mobbler.ovh/assets/img/3d.png", "https://mobbler.ovh/assets/img/presupuesto.png"],
+            "url": "https://mobbler.ovh/blog"
+        }, {
+            "@context": "http://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "habitacion 3d",
+            "image": ["https://mobbler.ovh/assets/img/tikamoon.png", "https://mobbler.ovh/assets/img/catalogo.png", "https://mobbler.ovh/assets/img/comentarios.png", "https://mobbler.ovh/assets/img/online.png", "https://mobbler.ovh/assets/img/3d.png", "https://mobbler.ovh/assets/img/presupuesto.png"],
+            "url": "https://twitter.com/mobbler_abp"
+        }, {
+            "@context": "http://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "habitacion 3d",
+            "image": ["https://mobbler.ovh/assets/img/tikamoon.png", "https://mobbler.ovh/assets/img/catalogo.png", "https://mobbler.ovh/assets/img/comentarios.png", "https://mobbler.ovh/assets/img/online.png", "https://mobbler.ovh/assets/img/3d.png", "https://mobbler.ovh/assets/img/presupuesto.png"],
+            "url": "https://www.instagram.com/mobbler_abp"
+        }]
+    </script>
+    <app-root></app-root>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LR5W74HSHE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-LR5W74HSHE');
+    </script>
+</body>
+
+</html>
