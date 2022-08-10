@@ -16,7 +16,7 @@ Contamos con un chatbot creado con RASA
 <img src="imagenes/registro.JPG" />
 <br>
 Al iniciar sesión nos lleva al gestor de proyectos/catalogos
-<img src="imagenes/gestor_proyecto.JPG" />
+<img src="imagenes/gestor_proyectos.JPG" />
 <img src="imagenes/crear_proyecto.JPG" />
 <img src="imagenes/gestor_catalogos.JPG" />
 <img src="imagenes/visualizar_catalogos.JPG" />
