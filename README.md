@@ -32,6 +32,13 @@ En la sección de presupuestos podrás ver el coste de los muebles y descargarte
 Esto es una ayuda para navegar por la escena
 <img src="imagenes/controles.JPG" />
 <br>
+Esto sería el perfil del usuario 
+<img src="imagenes/perfil.JPG" />
+Y las diferentes secciones
+<img src="imagenes/password.JPG" />
+<img src="imagenes/planes.JPG" />
+<img src="imagenes/facturas.JPG" />
+<br>
 También disponemos de un dashboard creado con PowerBi
 <img src="imagenes/dashboard.JPG" />
 <img src="imagenes/dashboard2.JPG" />
